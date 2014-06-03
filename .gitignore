@@ -1,0 +1,239 @@
+Pods
+Podfile.lock
+
+*.xcodeproj/project.xcworkspace/xcuserdata
+*.xcodeproj/xcuserdata
+*.xcworkspace/xcuserdata
+*.xcworkspace/xcshareddata
+
+#########################
+# .gitignore file for Xcode4 / OS X Source projects
+#
+# Version 2.1
+# For latest version, see: http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
+#
+# 2013 updates:
+# - fixed the broken "save personal Schemes"
+# - added line-by-line explanations for EVERYTHING (some were missing)
+#
+# NB: if you are storing "built" products, this WILL NOT WORK,
+# and you should use a different .gitignore (or none at all)
+# This file is for SOURCE projects, where there are many extra
+# files that we want to exclude
+#
+#########################
+
+#####
+# OS X temporary files that should never be committed
+#
+# c.f. http://www.westwind.com/reference/os-x/invisibles.html
+
+.DS_Store
+
+# c.f. http://www.westwind.com/reference/os-x/invisibles.html
+
+.Trashes
+
+# c.f. http://www.westwind.com/reference/os-x/invisibles.html
+
+*.swp
+
+# *.lock - this is used and abused by many editors for many different things.
+#    For the main ones I use (e.g. Eclipse), it should be excluded 
+#    from source-control, but YMMV
+
+*.lock
+
+#
+# profile - REMOVED temporarily (on double-checking, this seems incorrect; I can't find it in OS X docs?)
+#profile
+
+
+####
+# Xcode temporary files that should never be committed
+#
+# NB: NIB/XIB files still exist even on Storyboard projects, so we want this...
+
+*~.nib
+
+
+####
+# Xcode build files -
+#
+# NB: slash on the end, so we only remove the FOLDER, not any files that were badly named "DerivedData"
+
+DerivedData/
+
+# NB: slash on the end, so we only remove the FOLDER, not any files that were badly named "build"
+
+build/
+
+
+#####
+# Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)
+#
+# This is complicated:
+#
+# SOMETIMES you need to put this file in version control.
+# Apple designed it poorly - if you use "custom executables", they are
+#  saved in this file.
+# 99% of projects do NOT use those, so they do NOT want to version control this file.
+#  ..but if you're in the 1%, comment out the line "*.pbxuser"
+
+# .pbxuser: http://lists.apple.com/archives/xcode-users/2004/Jan/msg00193.html
+
+*.pbxuser
+
+# .mode1v3: http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
+
+*.mode1v3
+
+# .mode2v3: http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
+
+*.mode2v3
+
+# .perspectivev3: http://stackoverflow.com/questions/5223297/xcode-projects-what-is-a-perspectivev3-file
+
+*.perspectivev3
+
+#    NB: also, whitelist the default ones, some projects need to use these
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+
+###
+# the following section, whilst informative, does not work
+# as you don't seem to be able to re-include (!xcshareddata !xcschemes)
+# from already-excluded directories (xcuserdata)
+# cf http://stackoverflow.com/questions/13732165/gitignore-negations-ignored-by-git-for-osx-xcode-project
+
+
+# 	####  this is Adam's latest explanation, but see my version below
+# 	# Xcode 4 - semi-personal settings
+# 	#
+# 	#
+# 	# OPTION 1: ---------------------------------
+# 	#     throw away ALL personal settings (including custom schemes!
+# 	#     - unless they are "shared")
+# 	#
+# 	# NB: this is exclusive with OPTION 2 below
+# 	xcuserdata
+# 	
+# 	# OPTION 2: ---------------------------------
+# 	#     get rid of ALL personal settings, but KEEP SOME OF THEM
+# 	#     - NB: you must manually uncomment the bits you want to keep
+# 	#
+# 	# NB: this is exclusive with OPTION 1 above
+# 	#
+# 	#xcuserdata/**/*
+# 	
+# 	#     (requires option 2 above): Personal Schemes
+# 	#
+# 	#!xcuserdata/**/xcschemes/*
+
+#
+#
+# ####
+# # XCode 4 workspaces - more detailed
+# #
+# # Workspaces are important! They are a core feature of Xcode - don't exclude them :)
+# #
+# # Workspace layout is quite spammy. For reference:
+# #
+# # (root)/
+# # (project-name).xcodeproj/
+# # 	project.pbxproj <-- this file is causing problems/getting corrupted
+# # 	project.xcworkspace/
+# # 			contents.xcworkspacedata
+# #             xcshareddata/ <-if included, should be under source control (shared data)
+# # 			xcuserdata/   <-should NOT be under source control (personal data)
+# # 				(your name).xcuserdatad/
+# # 						UserInterfaceState.xcuserstate  <-we don't want this
+# #                          WorkspaceSettings.xcsettings   <-we don't want this
+# # 	xcuserdata/
+# # 		(your name).xcuserdatad/
+# #                        xcdebugger/                   <-we don't want this
+# #  							Breakpoints.xcbkptlist   <-we don't want this
+# #  					   xcschemes/                    <-keep??
+# #  					   		(project-name).xcscheme  <-keep????
+# #  					   		xcschememanagement.plist <-keep????
+# # 	xcdebugger/  <-we don't want this
+# # 	xcschemes/   <-keep????
+# #
+# #
+# #
+# # Xcode 4 workspaces - SHARED
+# #
+# # This is UNDOCUMENTED (google: "developer.apple.com xcshareddata" - 0 results
+# # But if you're going to kill personal workspaces, at least keep the shared ones...
+# #
+# #
+# !xcshareddata
+#
+#
+# ####
+# # XCode 4 build-schemes
+# #
+# # PRIVATE ones are stored inside xcuserdata
+# !xcschemes
+
+
+# so instead we have to
+# - optionally ignore project.xcworkspace
+# - specify precisely which (other) files in xcuserdata we wish to ignore
+# (there may be others, I lack the knowledge!)
+# http://stackoverflow.com/questions/10956312/project-xcworkspace-is-this-important
+# "project.xcworkspace ! is this important?"
+# (conclusion - only important if coordinating shared workspaces between groups)
+
+# OPTION 1
+# project.xcworkspace
+
+# OPTION 2 - keep shared workspaces
+project.xcworkspace/xcuserdata/
+
+# if project.xcworkspace is not ignored, you will want to ignore this file
+
+UserInterfaceState.xcuserstate
+
+# and in either case this
+
+xcdebugger/
+
+
+####
+# Xcode 4 - Deprecated classes
+#
+# Allegedly, if you manually "deprecate" your classes, they get moved here.
+#
+# We're using source-control, so this is a "feature" that we do not want!
+
+*.moved-aside
+
+
+####
+# UNKNOWN: recommended by others, but I can't discover what these files are
+#
+# ...none. Everything is now explained.
+
+###########################
+# TEST PROJECT - no gitignore
+#   create mode 100644 git test.xcodeproj/project.pbxproj
+#   create mode 100644 git test.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+#   create mode 100644 git test.xcodeproj/project.xcworkspace/xcuserdata/jonathan.xcuserdatad/UserInterfaceState.xcuserstate
+#   create mode 100644 git test.xcodeproj/xcuserdata/jonathan.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+#   create mode 100644 git test.xcodeproj/xcuserdata/jonathan.xcuserdatad/xcschemes/git test custom scheme.xcscheme
+#   create mode 100644 git test.xcodeproj/xcuserdata/jonathan.xcuserdatad/xcschemes/xcschememanagement.plist
+
+# TEST PROJECT - with gitignore
+#   create mode 100644 git test.xcodeproj/project.pbxproj
+#   create mode 100644 git test.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+#   create mode 100644 git test.xcodeproj/xcuserdata/jonathan.xcuserdatad/xcschemes/git test custom scheme.xcscheme
+#   create mode 100644 git test.xcodeproj/xcuserdata/jonathan.xcuserdatad/xcschemes/xcschememanagement.plist
+
+
+
+
+
