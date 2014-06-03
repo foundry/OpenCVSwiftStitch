@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB7D8E7A193E928E0059EE63 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */; };
+		AB7D8E7D193E92B80059EE63 /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */; };
+		AB7D8E80193E92C30059EE63 /* stitching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7E193E92C30059EE63 /* stitching.cpp */; };
 		AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A87193E8E830018B9EC /* AppDelegate.swift */; };
 		AB896A8A193E8E830018B9EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A89193E8E830018B9EC /* ViewController.swift */; };
 		AB896A8D193E8E830018B9EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB896A8B193E8E830018B9EC /* Main.storyboard */; };
@@ -25,6 +28,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftStitch-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		AB7D8E7B193E92B80059EE63 /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
+		AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
+		AB7D8E7E193E92C30059EE63 /* stitching.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stitching.cpp; sourceTree = "<group>"; };
+		AB7D8E7F193E92C30059EE63 /* stitching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stitching.h; sourceTree = "<group>"; };
 		AB896A82193E8E830018B9EC /* SwiftStitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB896A86193E8E830018B9EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB896A87193E8E830018B9EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,11 +85,18 @@
 		AB896A84193E8E830018B9EC /* SwiftStitch */ = {
 			isa = PBXGroup;
 			children = (
+				AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */,
+				AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */,
 				AB896A87193E8E830018B9EC /* AppDelegate.swift */,
 				AB896A89193E8E830018B9EC /* ViewController.swift */,
 				AB896A8B193E8E830018B9EC /* Main.storyboard */,
 				AB896A8E193E8E830018B9EC /* Images.xcassets */,
+				AB7D8E7B193E92B80059EE63 /* CVWrapper.h */,
+				AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */,
+				AB7D8E7E193E92C30059EE63 /* stitching.cpp */,
+				AB7D8E7F193E92C30059EE63 /* stitching.h */,
 				AB896A85193E8E830018B9EC /* Supporting Files */,
+				AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */,
 			);
 			path = SwiftStitch;
 			sourceTree = "<group>";
@@ -209,6 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB896A8A193E8E830018B9EC /* ViewController.swift in Sources */,
+				AB7D8E80193E92C30059EE63 /* stitching.cpp in Sources */,
+				AB7D8E7A193E928E0059EE63 /* UIImage+OpenCV.mm in Sources */,
+				AB7D8E7D193E92B80059EE63 /* CVWrapper.mm in Sources */,
 				AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,9 +347,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftStitch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStitch/SwiftStitch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -338,9 +361,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftStitch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStitch/SwiftStitch-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -399,6 +424,7 @@
 				AB896AA0193E8E830018B9EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB896AA1193E8E830018B9EC /* Build configuration list for PBXNativeTarget "SwiftStitchTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +433,7 @@
 				AB896AA3193E8E830018B9EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
