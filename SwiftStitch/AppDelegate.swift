@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  SwiftStitch
 //
-//  Created by jonathan on 04/06/2014.
-//  Copyright (c) 2014 ellipsis.com. All rights reserved.
+//  Created by Foundry on 04/06/2014.
+//  Copyright (c) 2014 Foundry. All rights reserved.
 //
 
 import UIKit

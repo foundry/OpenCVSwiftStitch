@@ -2,8 +2,8 @@
 //  SwViewController.swift
 //  CVOpenStitch
 //
-//  Created by jonathan on 04/06/2014.
-//  Copyright (c) 2014 foundry. All rights reserved.
+//  Created by Foundry on 04/06/2014.
+//  Copyright (c) 2014 Foundry. All rights reserved.
 //
 
 import UIKit

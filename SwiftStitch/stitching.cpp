@@ -1,3 +1,14 @@
+/////////////////////////
+/*
+ 
+ // stitching.cpp
+ // adapted from stitching.cpp sample distributed with openCV source.
+ // adapted by Foundry for iOS
+ 
+ */
+
+
+
 /*M///////////////////////////////////////////////////////////////////////////////////////
 //
 //  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.
@@ -39,10 +50,7 @@
 // the use of this software, even if advised of the possibility of such damage.
 //
 //
- 
- // this is simple_stitcher.cpp sample distributed with openCV source.
- //adapted by Washe/Foundry for iOS
- // most of the code is redundant, retained for reference only
+
  M*/
 
 #include "stitching.h"
