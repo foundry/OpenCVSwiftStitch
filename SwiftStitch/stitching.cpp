@@ -76,7 +76,21 @@ cv::Mat stitch (vector<Mat>& images)
     return pano;
 }
 
+//// DEPRECATED CODE //////
+/*
+ the code below this line is unused.
+ it is derived from the openCV 'stitched' C++ sample
+ left  in here only for illustration purposes
+ 
+ - refactor main loop as member function
+ - replace user input with iOS GUI
+ - replace ouput with return value to CVWrapper
+ 
+ */
 
+
+
+//refactored as stitch function
 int deprecatedMain(int argc, char* argv[])
 {
     int retval = parseCmdArgs(argc, argv);
@@ -96,7 +110,7 @@ int deprecatedMain(int argc, char* argv[])
     return 0;
 }
 
-
+//unused
 void printUsage()
 {
     cout <<
@@ -110,7 +124,7 @@ void printUsage()
         "      The default is 'result.jpg'.\n";
 }
 
-
+//all input passed in via CVWrapper to stitcher function
 int parseCmdArgs(int argc, char** argv)
 {
     if (argc == 1)

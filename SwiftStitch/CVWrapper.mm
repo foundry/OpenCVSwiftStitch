@@ -9,7 +9,6 @@
 #import "CVWrapper.h"
 #import "UIImage+OpenCV.h"
 #import "stitching.h"
-    //#import <vector>
 
 
 @implementation CVWrapper
