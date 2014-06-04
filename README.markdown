@@ -6,7 +6,7 @@ This new version demonstrates how to mix Swift, Objective-C and C++ in one proje
 
 Version 2.0 uses CocoaPods to import the latest OpenCV framework. Assuming you have first installed CocoaPods, run 'pod install' in this directory to install OpenCV for the project. If you want to try stitching without CocoaPods, take a look at V1.
 
-This is a very simple iOS/openCV example showing basic use of the Stitcher class. The c++ code is adapted from the c++ samples included with the openCV distribution.  
+OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitcher class. The c++ code is adapted from the c++ samples included with the openCV distribution.  
 
 Version 1.0 is built with XCode 4.5.3 for iOS 5.1+
 Version 2.0 is built with XCode 6.0 beta for iOS 7.0+
