@@ -10,16 +10,16 @@ import UIKit
 
 class SwViewController: UIViewController, UIScrollViewDelegate {
     
-    @IBOutlet var spinner:UIActivityIndicatorView
-    @IBOutlet var imageView:UIImageView
-    @IBOutlet var scrollView:UIScrollView
+    @IBOutlet var spinner:UIActivityIndicatorView!
+    @IBOutlet var imageView:UIImageView?
+    @IBOutlet var scrollView:UIScrollView!
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
     
-    init(coder aDecoder: NSCoder!)
+    required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -49,7 +49,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
             var image3 = UIImage(named:"pano_19_22_mid.jpg")
             var image4 = UIImage(named:"pano_19_25_mid.jpg")
             
-            var imageArray:UIImage[] = [image1,image2,image3,image4]
+            var imageArray:[UIImage] = [image1,image2,image3,image4]
             
             var stitchedImage:UIImage = CVWrapper.processWithArray(imageArray) as UIImage
             
@@ -57,12 +57,12 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
                 NSLog("stichedImage %@", stitchedImage)
                 let imageView:UIImageView = UIImageView.init(image: stitchedImage)
                 self.imageView = imageView
-                self.scrollView.addSubview(self.imageView)
+                self.scrollView.addSubview(self.imageView!)
                 self.scrollView.backgroundColor = UIColor.blackColor()
-                self.scrollView.contentSize = self.imageView.bounds.size
+                self.scrollView.contentSize = self.imageView!.bounds.size
                 self.scrollView.maximumZoomScale = 4.0
                 self.scrollView.minimumZoomScale = 0.5
-                self.scrollView.contentOffset = CGPoint(x: -(self.scrollView.bounds.size.width - self.imageView.bounds.size.width)/2.0, y: -(self.scrollView.bounds.size.height - self.imageView.bounds.size.height)/2.0)
+                self.scrollView.contentOffset = CGPoint(x: -(self.scrollView.bounds.size.width - self.imageView!.bounds.size.width)/2.0, y: -(self.scrollView.bounds.size.height - self.imageView!.bounds.size.height)/2.0)
                 NSLog("scrollview \(self.scrollView.contentSize)")
                 self.spinner.stopAnimating()
             }
@@ -71,7 +71,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
     
     
     func viewForZoomingInScrollView(scrollView:UIScrollView) -> UIView {
-        return self.imageView
+        return self.imageView!
     }
     
 }
