@@ -49,7 +49,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
             var image3 = UIImage(named:"pano_19_22_mid.jpg")
             var image4 = UIImage(named:"pano_19_25_mid.jpg")
             
-            var imageArray:[UIImage] = [image1,image2,image3,image4]
+            var imageArray:[UIImage!] = [image1,image2,image3,image4]
             
             var stitchedImage:UIImage = CVWrapper.processWithArray(imageArray) as UIImage
             
