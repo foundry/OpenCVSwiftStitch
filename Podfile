@@ -1,4 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 
-pod 'OpenCV'
+pod 'OpenCV', '~> 2.4.9.1'
