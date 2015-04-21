@@ -8,7 +8,7 @@ Version 2.0 uses CocoaPods to import the latest OpenCV framework. Assuming you h
 
 OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitcher class. The c++ code is adapted from the c++ samples included with the openCV distribution.  
 
-Version 1.0 is built with XCode 4.5.2 for iOS 5.1/6.0  
+Version 1.0 is built with XCode 4.5.2 for iOS 5.1+ 
 Version 2.0 is built with XCode 6.3 / Swift 1.2 for iOS 7.0+  
 
 Provides a partial answer to: [Libraries to capture panoramas in iOS 6](http://stackoverflow.com/questions/14062932/libraries-to-capture-panorama-in-ios-6/14064788#14064788) (Stack Overflow)
