@@ -9,6 +9,8 @@ Version 2.0 uses [CocoaPods](https://cocoapods.org/) to import  OpenCV 2.4.9.
 
 Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. 
 
+From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
+
 If you want to try stitching _without_ installing CocoaPods, take a look at V1, the Objective-C version.
 
 __Use__  
