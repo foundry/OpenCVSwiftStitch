@@ -32,7 +32,6 @@
 		AB896A89193E8E830018B9EC /* SwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwViewController.swift; sourceTree = "<group>"; };
 		AB896A8C193E8E830018B9EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB896A8E193E8E830018B9EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C3A1402E6A4343CFA7DCF2FD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				AB7D8E83193F33B40059EE63 /* libz.dylib */,
-				C3A1402E6A4343CFA7DCF2FD /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
