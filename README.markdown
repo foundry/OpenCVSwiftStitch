@@ -42,7 +42,7 @@ The openCV distribution is not as clean as we would like.
 
 Therefore we are using a [self-hosted podspec](https://github.com/Zi0P4tch0/Specs/tree/master/Specs/OpenCV) (_thanks Matteo!_) until official channels are fixed. Specs are available for [2.4.9](https://github.com/Zi0P4tch0/Specs/tree/master/Specs/OpenCV/2.4.9-zp) and [2.4.10](https://github.com/Zi0P4tch0/Specs/tree/master/Specs/OpenCV/2.4.10-zp), but as the latter won't run we use 2.4.9.
 
-_this version of OpenCVStitch opted to use cocoapods to overcome the notorious installation issues with previous versions of the openCV 2.4.x framework.. it seems our optimism was slightly premature!_
+_this version of OpenCVStitch opted to use cocoapods to overcome the [notorious](http://stackoverflow.com/q/13905471/1375695) [installation](http://stackoverflow.com/q/15855894/1375695) [issues](http://stackoverflow.com/a/14186883/1375695) with previous versions of the openCV 2.4.x framework.. it seems our optimism was slightly premature!_
 
 
 __Comparisons__
