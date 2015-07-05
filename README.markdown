@@ -9,7 +9,7 @@ To run the project you need to install the OpenCV framework:
 v3.0.0: available from [opencv.org](http://opencv.org)  
 v2.4.9: installed via cocoaPods
 
-v3.0.0: download the framework and drag it to your project. Include it in the 'Link Binary With Libararies' section of Build Phases for the targe.  
+v3.0.0: download the framework and drag it to your project. Include it in the _Link Binary With Libraries_ section of Build Phases for the target.  
 v2.4.9: Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
 
 __Use__  
