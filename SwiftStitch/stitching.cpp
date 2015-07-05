@@ -56,8 +56,13 @@
 #include "stitching.h"
 #include <iostream>
 #include <fstream>
-#include "opencv2/highgui/highgui.hpp"
+
+//openCV 2.4.x
 #include "opencv2/stitching/stitcher.hpp"
+
+//openCV 3.x
+//#include "opencv2/stitching.hpp"
+
 
 using namespace std;
 using namespace cv;
