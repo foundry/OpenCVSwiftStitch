@@ -1,6 +1,6 @@
 __OpenCV computer vision with iOS: stitching panoramas__  
 
-<img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/master/meta/example.big.jpg">
+<img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/example.big.jpg">
 
 Version 2.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch)
 
@@ -51,22 +51,22 @@ __Comparisons__
 <td>OpenCV 2.4.9</td><td>OpenCV 3.0.0</td>
 </tr><tr>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/master/meta/v2_inset2.jpg" width="300" height="375" alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset2.jpg" width="300" height="375" alt="v2_inset2">
 
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/master/meta/v3_inset2.jpg" width="300" height="375" alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3_inset2.jpg" width="300" height="375" alt="v2_inset2">
 
 
 </td>
 </tr><tr>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/master/meta/v2_inset.jpg" width="300" height="375" alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset.jpg" width="300" height="375" alt="v2_inset2">
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/master/meta/v3_inset.jpg" width="300" height="375" alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3_inset.jpg" width="300" height="375" alt="v2_inset2">
 
 </td>
 </tr></table>
