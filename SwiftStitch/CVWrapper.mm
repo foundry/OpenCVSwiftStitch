@@ -33,7 +33,7 @@
         NSLog (@"imageArray is empty");
         return 0;
         }
-    cv::vector<cv::Mat> matImages;
+    std::vector<cv::Mat> matImages;
 
     for (id image in imageArray) {
         if ([image isKindOfClass: [UIImage class]]) {
