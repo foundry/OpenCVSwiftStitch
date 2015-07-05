@@ -5,11 +5,12 @@ Version 2.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch)
 This new version demonstrates how to mix Swift, Objective-C and C++ in one project whilst keeping the code clearly separate. The project starts life in Swift. The AppDelegate and View Controller are written in Swift. Swift cannot talk directly to C++ (which we need for OpenCV), so we provide an Objective-C++ wrapper class to mediate between Swift and C++. We also provide an Objective-C++ category on UIImage to mediate between UIImage and CV::Mat image formats. The CVWrapper header file is pure Objective-C. For [v1](https://github.com/foundry/OpenCVStitch)(which doesn't use Swift) this separation was a matter of clean style. For v2, it is a requirement: if any C++ headers are included in the wrapper, the app will not compile (Swift won't like it).
 
 __Intallation__  
-Version 2.0 uses [CocoaPods](https://cocoapods.org/) to import  OpenCV 2.4.9. 
+To run the project you need to install the OpenCV framework:    
+v3.0.0: available from [opencv.org](http://opencv.org)  
+v2.4.9: installed via cocoaPods
 
-Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
-
-If you want to try stitching _without_ installing CocoaPods, take a look at V1, the Objective-C version.
+v3.0.0: download the framework and drag it to your project. Include it in the 'Link Binary With Libararies' section of Build Phases for the targe.  
+v2.4.9: Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
 
 __Use__  
 OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitcher class. The c++ code is adapted from a sample included with the openCV distribution.  
@@ -17,8 +18,8 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
 __OpenCVStitch Versions__  
-[Version 1.0](https://github.com/foundry/OpenCVStitch) is built with XCode 4.5.2 for iOS 5.1+   
 Version 2.0 is built with XCode 6.3 / Swift 1.2 for iOS 7.0+  
+[Version 1.0](https://github.com/foundry/OpenCVStitch) is built with XCode 4.5.2 for iOS 5.1+   
 
 Provides a partial answer to: [Libraries to capture panoramas in iOS 6](http://stackoverflow.com/questions/14062932/libraries-to-capture-panorama-in-ios-6/14064788#14064788) (Stack Overflow)
 
