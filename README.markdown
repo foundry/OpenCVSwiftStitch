@@ -27,7 +27,7 @@ Provides a partial answer to: [Libraries to capture panoramas in iOS 6](http://s
 
 __OpenCV Versions__  
 _OpenCV 3.x_   
-OpenCV 3.0.0 has just been released. There is no podspec avaiable, but the framework _does_ just work if you download from http://opencv.org and drag into the project. No need for cocoaPods with this version, and the stitching runs 85% faster on my iphone 5s!
+OpenCV 3.0.0 has just been released. There is no podspec avaiable, but the framework _does_ just work if you download from http://opencv.org and drag into the project. No need for cocoaPods with this version, and the stitching runs 85% faster on my iphone 5s - but seems to produce less accurate results.
 
 _OpenCV 2.4.x_  
 The openCV distribution is not as clean as we would like.  
@@ -39,3 +39,24 @@ Therefore we are using a [self-hosted podspec](https://github.com/Zi0P4tch0/Spec
 _this version of OpenCVStitch opted to use cocoapods to overcome the notorious installation issues with previous versions of the openCV 2.4.x framework.. it seems our optimism was slightly premature!_
 
 
+__Comparisons__
+
+<table><tr>
+<td>OpenCV 2.4.9</td><td>OpenCV 3.0.0</td>
+
+</tr><tr>
+<td>
+
+</td>
+<td>
+
+</td>
+
+</tr><tr>
+<td>
+
+</td>
+<td>
+
+</td>
+</tr></table>
