@@ -1,6 +1,6 @@
 __OpenCV computer vision with iOS: stitching panoramas__  
 
-<img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/master/meta/example.jpg">
+<img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/master/meta/example.big.jpg">
 
 Version 2.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch)
 
