@@ -12,7 +12,7 @@ v2 demonstrates how to mix Swift, Objective-C and C++ in one project whilst keep
 
 The project AppDelegate and View Controller are written in Swift. Swift cannot talk directly to C++ (which we need for OpenCV), so we provide an Objective-C++ wrapper class to mediate between Swift and C++. We also provide an Objective-C++ category on UIImage to mediate between UIImage and CV::Mat image formats. The CVWrapper header file is pure Objective-C. For [v1](https://github.com/foundry/OpenCVStitch)(which doesn't use Swift) this separation was a matter of clean style. For v2, it is a requirement: if any C++ headers are included in the wrapper, the app will not compile (Swift won't like it).
 
-__Intallation__  
+__Installation__  
 To run the project you need to install the OpenCV framework:    
 v3.0.0: available from [opencv.org](http://opencv.org)  
 v2.4.9: installed via cocoaPods
