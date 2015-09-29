@@ -48,6 +48,11 @@ Therefore we are using a [self-hosted podspec](https://github.com/Zi0P4tch0/Spec
 
 _this version of OpenCVStitch opted to use cocoapods to overcome the [notorious](http://stackoverflow.com/q/13905471/1375695) [installation](http://stackoverflow.com/q/15855894/1375695) [issues](http://stackoverflow.com/a/14186883/1375695) with previous versions of the openCV 2.4.x framework.. it seems our optimism was slightly premature!_
 
+__XCode 7__  
+
+The project is not yet updated for XCode 7, so there are minor issues that you may encounter with XCode 7, ios9 and Swift 2. In patcular, if you open the project in XCode 7, you will be asked if you want to convert to the latest Swift syntax. You do _not_ have to do this to run the project. If you _do_ convert, the update will also turn on Bitcode. Then the project will not compile, as the openCV framework is not bitcode-enabled. 
+
+You can disable Bitcode by setting the projects's build settings->build options->Enable Bitcode switch to NO.
 
 __Comparisons__
 
