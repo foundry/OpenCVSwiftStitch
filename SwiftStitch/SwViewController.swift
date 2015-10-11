@@ -19,7 +19,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
         // Custom initialization
     }
     
-    required init(coder aDecoder: NSCoder)
+    required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -44,14 +44,14 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
         self.spinner.startAnimating()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             
-            var image1 = UIImage(named:"pano_19_16_mid.jpg")
-            var image2 = UIImage(named:"pano_19_20_mid.jpg")
-            var image3 = UIImage(named:"pano_19_22_mid.jpg")
-            var image4 = UIImage(named:"pano_19_25_mid.jpg")
+            let image1 = UIImage(named:"pano_19_16_mid.jpg")
+            let image2 = UIImage(named:"pano_19_20_mid.jpg")
+            let image3 = UIImage(named:"pano_19_22_mid.jpg")
+            let image4 = UIImage(named:"pano_19_25_mid.jpg")
             
-            var imageArray:[UIImage!] = [image1,image2,image3,image4]
+            let imageArray:[UIImage!] = [image1,image2,image3,image4]
             
-            var stitchedImage:UIImage = CVWrapper.processWithArray(imageArray) as UIImage
+            let stitchedImage:UIImage = CVWrapper.processWithArray(imageArray) as UIImage
             
             dispatch_async(dispatch_get_main_queue()) {
                 NSLog("stichedImage %@", stitchedImage)

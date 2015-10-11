@@ -17,7 +17,10 @@ To run the project you need to install the OpenCV framework:
 v3.0.0: available from [opencv.org](http://opencv.org)  
 v2.4.9: installed via cocoaPods
 
-v3.0.0: download the framework and drag it to your project. Include it in the _Link Binary With Libraries_ section of Build Phases for the target.  
+v3.0.0: download the framework and drag it to your project.  
+Include it in the _Link Binary With Libraries_ section of Build Phases for the target.  
+Change the `#include` line for 3.0 compatibility as indicated in `stitching.cpp`  
+
 v2.4.9: Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
 
 __Use__  
@@ -28,7 +31,7 @@ The app has almost no user interface. On launch, the stitching code operates on 
 __OpenCVStitch Versions__   
 [Version 2.0](https://github.com/foundry/OpenCVSwiftStitch)   
 Swift / Objective-C / C++   
-Tested with XCode 6.3 / Swift 1.2 for iOS 7.0+  
+Tested with XCode 7.0 / Swift 2.0 for iOS 7.0+  
 [Version 1.0](https://github.com/foundry/OpenCVStitch)  
 Objective-C / C++   
 Tested with XCode 4.5.2 -> 6.3 for iOS 5.1 upwards   
@@ -37,7 +40,8 @@ Provides a partial answer to: [Libraries to capture panoramas in iOS 6](http://s
 
 __OpenCV Versions__  
 _OpenCV 3.x_   
-OpenCV 3.0.0 has just been released. There is no podspec avaiable, but the framework _does_ just work if you download from http://opencv.org and drag into the project. No need for cocoaPods with this version, and the stitching runs 85% faster on my iphone 5s - but seems to produce less accurate results.
+There is no podspec available for openCV 3, but the framework _does_ just work if you download from [http://opencv.org](http://opencv.org) and drag into the project. No need for cocoaPods with this version (_this drag-n-drop compatibility is quite an achievement given past difficulties with openCV installations_).  
+The stitching seems to be much more efficient (85% faster on my iphone 5s). However the quality is noticeably inferior with the test images supplied, so v2.4x remains the default for now.
 
 _OpenCV 2.4.x_  
 The openCV distribution is not as clean as we would like.  
@@ -50,9 +54,8 @@ _this version of OpenCVStitch opted to use cocoapods to overcome the [notorious]
 
 __XCode 7__  
 
-The project is not yet updated for XCode 7, so there are minor issues that you may encounter with XCode 7, ios9 and Swift 2. In particular, if you open the project in XCode 7, you will be asked if you want to convert to the latest Swift syntax. You do _not_ have to do this to run the project. If you _do_ convert, the update will also turn on Bitcode. Then the project will not compile, as the openCV framework is not bitcode-enabled. 
+Project is now updated for Swift 2 and XCode 7. Point of no return! For backwards compatibility refer to the Objective-C version (or checkout the previous commit).
 
-You can disable Bitcode by setting the projects's build settings->build options->Enable Bitcode switch to NO.
 
 __Comparisons__
 
