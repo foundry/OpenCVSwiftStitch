@@ -2,7 +2,7 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 <img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/example.big.jpg">
 
-Version 2.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch)
+Version 2.1 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch)
 
 This project was created to a answer a couple of Stack Overflow questions:  
 [libraries to CAPTURE panorama in iOS](http://stackoverflow.com/q/14062932/1375695)  
@@ -54,8 +54,7 @@ _this version of OpenCVStitch opted to use cocoapods to overcome the [notorious]
 
 __XCode 7__  
 
-Project is now updated for Swift 2 and XCode 7. Point of no return! For backwards compatibility refer to the Objective-C version (or checkout the previous commit).
-
+Project is now updated for Swift 2 and XCode 7. Point of no return! For backwards compatibility checkout the 2.0 branch or refer to the Objective-C version v1.0.
 
 __Comparisons__
 
