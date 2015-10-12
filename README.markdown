@@ -29,9 +29,15 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
 __OpenCVStitch Versions__   
-[Version 2.0](https://github.com/foundry/OpenCVSwiftStitch)   
+
+
+
+[Version 2.1](https://github.com/foundry/OpenCVSwiftStitch)   
 Swift / Objective-C / C++   
 Tested with XCode 7.0 / Swift 2.0 for iOS 7.0+  
+[Version 2.0](https://github.com/foundry/OpenCVSwiftStitch/tree/v2.0)   
+Swift / Objective-C / C++   
+Tested with XCode 6.4 / Swift 2.1 for iOS 7.0+  
 [Version 1.0](https://github.com/foundry/OpenCVStitch)  
 Objective-C / C++   
 Tested with XCode 4.5.2 -> 6.3 for iOS 5.1 upwards   
