@@ -14,6 +14,7 @@
 		AB896A8A193E8E830018B9EC /* SwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A89193E8E830018B9EC /* SwViewController.swift */; };
 		AB896A8D193E8E830018B9EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB896A8B193E8E830018B9EC /* Main.storyboard */; };
 		AB896A8F193E8E830018B9EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB896A8E193E8E830018B9EC /* Images.xcassets */; };
+		ABAA668D1BD420BE00BD6A45 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		AB896A89193E8E830018B9EC /* SwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwViewController.swift; sourceTree = "<group>"; };
 		AB896A8C193E8E830018B9EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB896A8E193E8E830018B9EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 		AB896A84193E8E830018B9EC /* SwiftStitch */ = {
 			isa = PBXGroup;
 			children = (
+				ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */,
+				ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */,
 				AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */,
 				AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */,
 				AB896A87193E8E830018B9EC /* AppDelegate.swift */,
@@ -171,6 +176,7 @@
 			files = (
 				AB896A8A193E8E830018B9EC /* SwViewController.swift in Sources */,
 				AB7D8E80193E92C30059EE63 /* stitching.cpp in Sources */,
+				ABAA668D1BD420BE00BD6A45 /* UIImage+Rotate.m in Sources */,
 				AB7D8E7A193E928E0059EE63 /* UIImage+OpenCV.mm in Sources */,
 				AB7D8E7D193E92B80059EE63 /* CVWrapper.mm in Sources */,
 				AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */,

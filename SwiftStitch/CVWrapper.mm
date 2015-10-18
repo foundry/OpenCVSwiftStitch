@@ -9,6 +9,7 @@
 #import "CVWrapper.h"
 #import "UIImage+OpenCV.h"
 #import "stitching.h"
+#import "UIImage+Rotate.h"
 
 
 @implementation CVWrapper
@@ -37,7 +38,11 @@
 
     for (id image in imageArray) {
         if ([image isKindOfClass: [UIImage class]]) {
-            cv::Mat matImage = [image CVMat3];
+            /*
+             All images taken with the iPhone/iPa cameras are LANDSCAPE LEFT orientation. The  UIImage imageOrientation flag is an instruction to the OS to transform the image during display only. When we feed images into openCV, they need to be the actual orientation that we expect them to be for stitching. So we rotate the actual pixel matrix here if required.
+             */
+            UIImage* rotatedImage = [image rotateToImageOrientation];
+            cv::Mat matImage = [rotatedImage CVMat3];
             NSLog (@"matImage: %@",image);
             matImages.push_back(matImage);
         }
