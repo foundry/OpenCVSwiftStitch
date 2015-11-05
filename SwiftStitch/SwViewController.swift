@@ -62,6 +62,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
                 self.scrollView.contentSize = self.imageView!.bounds.size
                 self.scrollView.maximumZoomScale = 4.0
                 self.scrollView.minimumZoomScale = 0.5
+                self.scrollView.delegate = self
                 self.scrollView.contentOffset = CGPoint(x: -(self.scrollView.bounds.size.width - self.imageView!.bounds.size.width)/2.0, y: -(self.scrollView.bounds.size.height - self.imageView!.bounds.size.height)/2.0)
                 NSLog("scrollview \(self.scrollView.contentSize)")
                 self.spinner.stopAnimating()
