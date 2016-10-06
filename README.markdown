@@ -69,7 +69,7 @@ Project is now updated for Swift 3 and XCode 8. Point of no return! For backward
 __Comparisons__
 
 <table><tr>
-<td>OpenCV 2.4.9</td><td>OpenCV 3.0.0</td>
+<td>OpenCV 2.4.9</td><td>OpenCV 3.0.0</td><td>OpenCV 3.1.0</td>
 </tr><tr>
 <td>
 <img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset2.jpg" width="300" height="375" alt="v2_inset2">
@@ -81,6 +81,11 @@ __Comparisons__
 
 
 </td>
+<td>
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3.1_inset2.jpg" width="300" height="375" alt="v2_inset2">
+
+
+</td>
 </tr><tr>
 <td>
 <img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset.jpg" width="300" height="375" alt="v2_inset2">
@@ -88,6 +93,10 @@ __Comparisons__
 </td>
 <td>
 <img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3_inset.jpg" width="300" height="375" alt="v2_inset2">
+
+</td>
+<td>
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3.1_inset.jpg" width="300" height="375" alt="v2_inset2">
 
 </td>
 </tr></table>
