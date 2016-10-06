@@ -14,7 +14,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var imageView:UIImageView?
     @IBOutlet var scrollView:UIScrollView!
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
@@ -35,30 +35,30 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         stitch()
     }
     
     func stitch() {
         self.spinner.startAnimating()
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             
             let image1 = UIImage(named:"pano_19_16_mid.jpg")
             let image2 = UIImage(named:"pano_19_20_mid.jpg")
             let image3 = UIImage(named:"pano_19_22_mid.jpg")
             let image4 = UIImage(named:"pano_19_25_mid.jpg")
             
-            let imageArray:[UIImage!] = [image1,image2,image3,image4]
+            let imageArray:[UIImage?] = [image1,image2,image3,image4]
             
-            let stitchedImage:UIImage = CVWrapper.processWithArray(imageArray) as UIImage
+            let stitchedImage:UIImage = CVWrapper.process(with: imageArray) as UIImage
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 NSLog("stichedImage %@", stitchedImage)
                 let imageView:UIImageView = UIImageView.init(image: stitchedImage)
                 self.imageView = imageView
                 self.scrollView.addSubview(self.imageView!)
-                self.scrollView.backgroundColor = UIColor.blackColor()
+                self.scrollView.backgroundColor = UIColor.black
                 self.scrollView.contentSize = self.imageView!.bounds.size
                 self.scrollView.maximumZoomScale = 4.0
                 self.scrollView.minimumZoomScale = 0.5
@@ -71,7 +71,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    func viewForZoomingInScrollView(scrollView:UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView:UIScrollView) -> UIView? {
         return self.imageView!
     }
     
