@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface CVWrapper : NSObject
 
 + (UIImage*) processImageWithOpenCV: (UIImage*) inputImage;
 
 + (UIImage*) processWithOpenCVImage1:(UIImage*)inputImage1 image2:(UIImage*)inputImage2;
 
-+ (UIImage*) processWithArray:(NSArray*)imageArray;
++ (UIImage*) processWithArray:(NSArray<UIImage*>*)imageArray;
 
 
 @end
+NS_ASSUME_NONNULL_END

@@ -42,7 +42,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
     
     func stitch() {
         self.spinner.startAnimating()
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+        DispatchQueue.global().async {
             
             let image1 = UIImage(named:"pano_19_16_mid.jpg")
             let image2 = UIImage(named:"pano_19_20_mid.jpg")
@@ -51,7 +51,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
             
             let imageArray:[UIImage?] = [image1,image2,image3,image4]
             
-            let stitchedImage:UIImage = CVWrapper.process(with: imageArray) as UIImage
+            let stitchedImage:UIImage = CVWrapper.process(with: imageArray as! [UIImage]) as UIImage
             
             DispatchQueue.main.async {
                 NSLog("stichedImage %@", stitchedImage)
