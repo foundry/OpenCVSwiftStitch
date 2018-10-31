@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/foundry/Specs.git'
 
-platform :ios, '7.0'
+platform :ios, '8.0'
 
 
 # Uncomment this line if you're using Swift
