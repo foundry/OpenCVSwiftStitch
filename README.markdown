@@ -2,8 +2,8 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 <img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/example.big.jpg">
 
-Version 3.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) - updated for Swift 3.0  
-See appropriate branches for Swift 2.x
+Version 4.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) - updated for Swift 4.2  
+See appropriate branches and tags for Swift 2.x - 3.x
 
 This project was created to a answer a couple of Stack Overflow questions:  
 [libraries to CAPTURE panorama in iOS](http://stackoverflow.com/q/14062932/1375695)  
@@ -31,8 +31,10 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
 __OpenCVStitch Versions__   
-
-[Version 3.0](https://github.com/foundry/OpenCVSwiftStitch)   
+[Version 4.0](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/4.0)   
+Swift / Objective-C / C++   
+Tested with XCode 10.0 / Swift 4.2 for iOS 8.0+  
+[Version 3.0](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/3.0)   
 Swift / Objective-C / C++   
 Tested with XCode 8.0 / Swift 3.0 for iOS 8.0+  
 [Version 2.1](https://github.com/foundry/OpenCVSwiftStitch)   
@@ -62,9 +64,9 @@ Therefore we are using a [self-hosted podspec](https://github.com/Zi0P4tch0/Spec
 
 _this version of OpenCVStitch opted to use cocoapods to overcome the [notorious](http://stackoverflow.com/q/13905471/1375695) [installation](http://stackoverflow.com/q/15855894/1375695) [issues](http://stackoverflow.com/a/14186883/1375695) with previous versions of the openCV 2.4.x framework.. it seems our optimism was slightly premature!_
 
-__XCode 8__  
+__XCode 10__  
 
-Project is now updated for Swift 3 and XCode 8. Point of no return! For backwards compatibility checkout the 2.0 / 2.1 branches or refer to the Objective-C version v1.0.
+Project is now updated for Swift 4.1 and XCode 10. For backwards compatibility checkout the 2.0 / 2.1 branches, 3.0 release or refer to the Objective-C version v1.0.
 
 __Comparisons__
 
