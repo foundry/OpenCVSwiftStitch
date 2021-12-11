@@ -16,7 +16,18 @@
 #ifdef __cplusplus
 #undef NO
 #undef YES
-#import <opencv2/opencv.hpp>
+/*
+ to use all opencv features, uncomment this line and comment the following two imports.
+ */
+//#import <opencv2/opencv.hpp>
+
+/*
+ Importing only the needed features can mitigate against build issues with other parts of openCV
+ */
+#import <opencv2/stitching.hpp>
+#import <opencv2/imgcodecs.hpp>
+
+
 #endif
 #import <UIKit/UIKit.h>
 @interface UIImage (OpenCV)
