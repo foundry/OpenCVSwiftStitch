@@ -2,8 +2,8 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 <img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/example.big.jpg">
 
-Version 4.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) - updated for Swift 4.2  
-See appropriate branches and tags for Swift 2.x - 3.x
+Version 5.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) - updated for Swift 5.0  
+See appropriate branches and tags for Swift 2.x - 4.x
 
 This project was created to a answer a couple of Stack Overflow questions:  
 [libraries to CAPTURE panorama in iOS](http://stackoverflow.com/q/14062932/1375695)  
@@ -18,12 +18,8 @@ To run the project you need to install the OpenCV framework using Cocoapods
 
 Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
 
-v3.1.0: The default podfile will install openCV v3.1.0, with a hotfix for arm64 compataibility
+The podfile will install openCV v4.3.0. 
 
-v2.4.9: Recomment the podfile:  
-    pod 'OpenCV', '2.4.9-zp'  
-    #pod 'OpenCV', '~> 3.1.0.1'  
-Change the `#include` line for 2.4.9 compatibility as indicated in `stitching.cpp`  
 
 __Use__  
 OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitcher class. The c++ code is adapted from a sample included with the openCV distribution.  

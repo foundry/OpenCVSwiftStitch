@@ -45,7 +45,7 @@
 - (cv::Mat)CVMat3
 {
     cv::Mat result = [self CVMat];
-    cv::cvtColor(result , result , CV_RGBA2RGB);
+    cv::cvtColor(result , result , cv::COLOR_RGBA2RGB);
     return result;
 
 }

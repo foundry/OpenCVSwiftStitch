@@ -12,9 +12,13 @@
 //  appreciated but not required.
 //
 
-#import <UIKit/UIKit.h>
+//https://github.com/opencv/opencv/issues/6114#issuecomment-341985659
+#ifdef __cplusplus
+#undef NO
+#undef YES
 #import <opencv2/opencv.hpp>
-
+#endif
+#import <UIKit/UIKit.h>
 @interface UIImage (OpenCV)
 
     //cv::Mat to UIImage
