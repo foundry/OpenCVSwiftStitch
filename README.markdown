@@ -65,40 +65,40 @@ __Comparisons__
 <td>OpenCV 2.4.9</td><td>OpenCV 3.0.0</td><td>OpenCV 3.1.0</td>
 </tr><tr>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset2.jpg"  alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset2.jpg"  width="200" height="240" alt="v2_inset2">
 
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3_inset2.jpg"  alt="v3_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3_inset2.jpg" width="200" height="240" alt="v3_inset2">
 
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3.1_inset2.jpg"  alt="v3.1_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3.1_inset2.jpg" width="200" height="240" alt="v3.1_inset2">
 
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v5.0_inset2.jpg"  alt="v5_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v5_inset2.jpg" width="200" height="240" alt="v5_inset2">
 
 
 </td>
 </tr><tr>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset.jpg"  alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset.jpg" width="200" height="240" alt="v2_inset2">
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3_inset.jpg"  alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3_inset.jpg" width="200" height="240" alt="v2_inset2">
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3.1_inset.jpg"  alt="v2_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v3.1_inset.jpg" width="200" height="240" alt="v2_inset2">
 
 </td>
 <td>
-<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v5.0_inset.jpg"  alt="v5_inset2">
+<img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v5_inset.jpg" width="200" height="240" alt="v5_inset2">
 
 </td>
 </tr></table>
