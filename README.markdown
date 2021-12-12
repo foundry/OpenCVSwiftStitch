@@ -50,7 +50,7 @@ Tested with XCode 4.5.2 -> 6.3 for iOS 5.1 upwards
 Provides a partial answer to: [Libraries to capture panoramas in iOS 6](http://stackoverflow.com/questions/14062932/libraries-to-capture-panorama-in-ios-6/14064788#14064788) (Stack Overflow)
 
 __OpenCV Versions__   
-_OpenCV 4.3_
+_OpenCV 4.3_  
 The podfile installs OpenCV 4.3  
 
 _this version of OpenCVStitch opted to use cocoapods to overcome the [notorious](http://stackoverflow.com/q/13905471/1375695) [installation](http://stackoverflow.com/q/15855894/1375695) [issues](http://stackoverflow.com/a/14186883/1375695) with previous versions of the framework_
