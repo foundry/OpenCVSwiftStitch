@@ -26,7 +26,7 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
-__OpenCVStitch Versions__   
+__OpenCVSwiftStitch Versions__   
 [Version 5.0](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.0)  
 Swift / Objective-C / C++   
 OpenCV 4.3  
@@ -50,23 +50,14 @@ Tested with XCode 4.5.2 -> 6.3 for iOS 5.1 upwards
 Provides a partial answer to: [Libraries to capture panoramas in iOS 6](http://stackoverflow.com/questions/14062932/libraries-to-capture-panorama-in-ios-6/14064788#14064788) (Stack Overflow)
 
 __OpenCV Versions__  
-_OpenCV 3.x_   
-The podfile installs a hotfixed version of 3.1 as the prebuilt binary provided by openCV  [breaks on arm64 devices](https://github.com/kylefleming/opencv/releases/tag/3.1.0-ios-fix).
+_OpenCV 4.3_
+The podfile installs OpenCV 4.3  
 
-The stitching seems to be much more efficient (85% faster on my iphone 5s). However the quality is noticeably inferior with the test images supplied, so v2.4x remains the default for now [_some improvement with openCV 3.1_].
+_this version of OpenCVStitch opted to use cocoapods to overcome the [notorious](http://stackoverflow.com/q/13905471/1375695) [installation](http://stackoverflow.com/q/15855894/1375695) [issues](http://stackoverflow.com/a/14186883/1375695) with previous versions of the framework_
 
-_OpenCV 2.4.x_  
-The openCV distribution is not as clean as we would like.  
-2.4.10 - the pod spec and the distribution build for iOS [is broken](http://stackoverflow.com/questions/28331397/cocoapods-opencv-2-4-10-linker-error/28820510)  
-2.4.9 - the pod spec [is broken](http://stackoverflow.com/questions/31005022/cant-install-opencv-with-cocoapods-could-not-resolve-host-hivelocity-dl-sourc). This is likely a result of relying on Sourceforge for hosting.  
+__XCode 12__  
 
-Therefore we are using a [self-hosted podspec](https://github.com/Zi0P4tch0/Specs/tree/master/Specs/OpenCV) (_thanks Matteo!_) until official channels are fixed. Specs are available for [2.4.9](https://github.com/Zi0P4tch0/Specs/tree/master/Specs/OpenCV/2.4.9-zp) and [2.4.10](https://github.com/Zi0P4tch0/Specs/tree/master/Specs/OpenCV/2.4.10-zp), but as the latter won't run we use 2.4.9.
-
-_this version of OpenCVStitch opted to use cocoapods to overcome the [notorious](http://stackoverflow.com/q/13905471/1375695) [installation](http://stackoverflow.com/q/15855894/1375695) [issues](http://stackoverflow.com/a/14186883/1375695) with previous versions of the openCV 2.4.x framework.. it seems our optimism was slightly premature!_
-
-__XCode 10__  
-
-Project is now updated for Swift 4.1 and XCode 10. For backwards compatibility checkout the 2.0 / 2.1 branches, 3.0 release or refer to the Objective-C version v1.0.
+Project is now updated for Swift 5.0 and XCode 12. For backwards compatibility checkout the 2.0 / 2.1 branches, 3.0 /4.0 releases or refer to the Objective-C version v1.0.
 
 __Comparisons__
 
