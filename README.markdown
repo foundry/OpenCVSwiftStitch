@@ -62,7 +62,7 @@ Project is now updated for Swift 5.0 and XCode 12. For backwards compatibility c
 __Comparisons__
 
 <table><tr>
-<td>OpenCV 2.4.9</td><td>OpenCV 3.0.0</td><td>OpenCV 3.1.0</td>
+<td>OpenCV 2.4.9</td><td>OpenCV 3.0.0</td><td>OpenCV 3.1.0</td><td>OpenCV 4.3.0</td>
 </tr><tr>
 <td>
 <img src="https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/v2_inset2.jpg"  width="200" height="240" alt="v2_inset2">
