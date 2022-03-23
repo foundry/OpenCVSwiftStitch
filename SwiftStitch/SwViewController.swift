@@ -33,27 +33,33 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.spinner.startAnimating()
-        stitch { [weak self] image in
-            self?.displayImage(image: image)
-            self?.spinner.stopAnimating()
+        Task {
+            do {
+                let image = try await stitched()
+                self.displayImage(image: image)
+            } catch let error as NSError {
+                let alert = UIAlertController(title: "Stitching Error", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+               self.show(alert, sender: nil)
+            }
+            self.spinner.stopAnimating()
         }
     }
+
     
-    func stitch(completion:@escaping ( UIImage)->())  {
-        DispatchQueue.global().async {
-            guard
-                let image1 = UIImage(named:"pano_19_16_mid.jpg"),
-                let image2 = UIImage(named:"pano_19_20_mid.jpg"),
-                let image3 = UIImage(named:"pano_19_22_mid.jpg"),
-                let image4 = UIImage(named:"pano_19_25_mid.jpg")
-            else { return }
-           
-            let images:[UIImage] = [image1,image2,image3,image4]
-            let stitchedImage:UIImage = CVWrapper.process(with: images)
-            DispatchQueue.main.async {
-                completion(stitchedImage)
-            }
+    func stitched() async throws -> UIImage {
+        guard
+            let image1 = UIImage(named:"pano_19_16_mid.jpg"),
+            let image2 = UIImage(named:"pano_19_20_mid.jpg"),
+            let image3 = UIImage(named:"pano_19_22_mid.jpg"),
+            let image4 = UIImage(named:"pano_19_25_mid.jpg")
+        else {
+            let error = NSError.init(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "couldn't create input images"])
+            throw error
         }
+        let images:[UIImage] = [image1,image2,image3,image4]
+        let stitchedImage:UIImage = try CVWrapper.process(with: images)
+        return stitchedImage
     }
     
     func displayImage(image: UIImage) {

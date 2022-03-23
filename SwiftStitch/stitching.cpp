@@ -34,11 +34,24 @@ cv::Mat stitch (vector<Mat>& images)
     Ptr<Stitcher> stitcher = Stitcher::create();
     Stitcher::Status status = stitcher->stitch(imgs, pano);
     
-    if (status != Stitcher::OK)
-        {
-        cout << "Can't stitch images, error code = " << int(status) << endl;
-            //return 0;
-        }
-    return pano;
+    std::string errorString = "";
+    switch (status) {
+        case cv::Stitcher::OK:
+            break;
+        case cv::Stitcher::ERR_NEED_MORE_IMGS:
+            errorString += "need more images";
+            break;
+        case cv::Stitcher::ERR_HOMOGRAPHY_EST_FAIL:
+            errorString += "homography failed";
+            break;
+        case cv::Stitcher::ERR_CAMERA_PARAMS_ADJUST_FAIL:
+            errorString += "camera params adjust failed";
+            break;
+    }
+    if (errorString.length() > 0) {
+        throw invalid_argument(errorString);
+    } else {
+        return pano;
+    }
 }
 

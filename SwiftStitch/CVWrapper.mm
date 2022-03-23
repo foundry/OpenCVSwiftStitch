@@ -14,19 +14,19 @@
 
 @implementation CVWrapper
 
-+ (UIImage*) processWithImage: (UIImage*) image
++ (nullable UIImage*) processWithImage: (UIImage*) image error:(NSError**)error;
 {
-    UIImage* result = [[self class] processWithImages:@[image]];
+    UIImage* result = [[self class] processWithImages:@[image] error:error];
     return result;
 }
 
-+ (UIImage*) processWithImage1:(UIImage*)image1 image2:(UIImage*)image2;
++ (nullable UIImage*) processWithImage1:(UIImage*)image1 image2:(UIImage*)image2 error:(NSError**)error;
 {
-    UIImage* result = [[self class] processWithImages:@[image1, image2]];
+    UIImage* result = [[self class] processWithImages:@[image1, image2] error:error];
     return result;
 }
 
-+ (UIImage*) processWithImages:(NSArray<UIImage*>*)images;
++ (nullable UIImage*) processWithImages:(NSArray<UIImage*>*)images error:(NSError**)error;
 {
     if ([images count]==0){
         NSLog (@"imageArray is empty");
@@ -46,9 +46,24 @@
         }
     }
     NSLog (@"stitching...");
-    cv::Mat stitchedMat = stitch (matImages);
-    UIImage* result =  [UIImage imageWithCVMat:stitchedMat];
-    return result;
+    cv::Mat stitchedMat;
+    try {
+        stitchedMat = stitch (matImages);
+        UIImage* result =  [UIImage imageWithCVMat:stitchedMat];
+        return result;
+    } catch (std::invalid_argument& e) {
+        if (error) {
+            std::string stdErrorMsg = e.what();
+            NSString* errorMsg = [NSString stringWithUTF8String:stdErrorMsg.c_str()];
+            NSDictionary* userInfo = @{
+                NSLocalizedFailureReasonErrorKey : @"Stitching Error",
+                NSLocalizedDescriptionKey : errorMsg
+            };
+            NSError* err = [NSError errorWithDomain:@"SwiftStitchErrorDomain" code:0 userInfo:userInfo];
+            *error = err;
+        }
+        return nil;
+    }
 }
 
 

@@ -11,11 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface CVWrapper : NSObject
 
-+ (UIImage*) processWithImage: (UIImage*) image;
++ (nullable UIImage*) processWithImage: (UIImage*) image error:(NSError**)error;
 
-+ (UIImage*) processWithImage1:(UIImage*)image1 image2:(UIImage*)image2;
++ (nullable UIImage*) processWithImage1:(UIImage*)image1 image2:(UIImage*)image2 error:(NSError**)error;
 
-+ (UIImage*) processWithImages:(NSArray<UIImage*>*)images;
++ (nullable UIImage*) processWithImages:(NSArray<UIImage*>*)images error:(NSError**)error;
 
 
 @end
