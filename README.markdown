@@ -30,9 +30,9 @@ __OpenCVSwiftStitch Versions__
 [Version 5.1](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.1)  
 Swift / Objective-C / C++   
 OpenCV 4.3  
-Tested with XCode 13.2 / Swift 5.0 for iOS 13.0+  
 Modern Swift - async / await  
 Error, exception handling from C++ -> Objective-C -> Swift  
+Tested with XCode 13.2 / Swift 5.0 for iOS 13.0+  
 [Version 5.0](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.0)  
 Swift / Objective-C / C++   
 OpenCV 4.3  
