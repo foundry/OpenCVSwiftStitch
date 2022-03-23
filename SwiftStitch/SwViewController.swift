@@ -23,25 +23,23 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
     {
         super.init(coder: aDecoder)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.scrollView.delegate = self
+
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        stitch()
+        self.spinner.startAnimating()
+        stitch { [weak self] image in
+            self?.displayImage(image: image)
+            self?.spinner.stopAnimating()
+        }
     }
     
-    func stitch() {
-        self.spinner.startAnimating()
+    func stitch(completion:@escaping ( UIImage)->())  {
         DispatchQueue.global().async {
             guard
                 let image1 = UIImage(named:"pano_19_16_mid.jpg"),
@@ -53,21 +51,21 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
             let images:[UIImage] = [image1,image2,image3,image4]
             let stitchedImage:UIImage = CVWrapper.process(with: images)
             DispatchQueue.main.async {
-                NSLog("stichedImage %@", stitchedImage)
-                let imageView:UIImageView = UIImageView.init(image: stitchedImage)
-                self.imageView = imageView
-                self.scrollView.addSubview(self.imageView!)
-                self.scrollView.backgroundColor = UIColor.black
-                self.scrollView.contentSize = self.imageView!.bounds.size
-                self.scrollView.maximumZoomScale = 4.0
-                self.scrollView.minimumZoomScale = 0.5
-                self.scrollView.delegate = self
-                self.scrollView.contentOffset = CGPoint(x: -(self.scrollView.bounds.size.width - self.imageView!.bounds.size.width)/2.0, y: -(self.scrollView.bounds.size.height - self.imageView!.bounds.size.height)/2.0)
-                NSLog("scrollview \(self.scrollView.contentSize)")
-                self.spinner.stopAnimating()
+                completion(stitchedImage)
             }
         }
     }
+    
+    func displayImage(image: UIImage) {
+        let imageView:UIImageView = UIImageView.init(image: image)
+        self.imageView = imageView
+        self.scrollView.addSubview(self.imageView!)
+        self.scrollView.contentSize = self.imageView!.bounds.size
+        self.scrollView.contentOffset = CGPoint(x: -(self.scrollView.bounds.size.width - self.imageView!.bounds.size.width)/2.0, y: -(self.scrollView.bounds.size.height - self.imageView!.bounds.size.height)/2.0)
+        NSLog("scrollview \(self.scrollView.contentSize)")
+    }
+    
+   
     
     
     func viewForZooming(in scrollView:UIScrollView) -> UIView? {
