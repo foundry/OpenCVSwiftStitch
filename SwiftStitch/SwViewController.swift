@@ -50,9 +50,8 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
                 let image4 = UIImage(named:"pano_19_25_mid.jpg")
             else { return }
            
-            let imageArray:[UIImage] = [image1,image2,image3,image4]
-            let stitchedImage:UIImage = CVWrapper.process(with: imageArray)
-            
+            let images:[UIImage] = [image1,image2,image3,image4]
+            let stitchedImage:UIImage = CVWrapper.process(with: images)
             DispatchQueue.main.async {
                 NSLog("stichedImage %@", stitchedImage)
                 let imageView:UIImageView = UIImageView.init(image: stitchedImage)

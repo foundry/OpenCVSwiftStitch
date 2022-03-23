@@ -14,29 +14,27 @@
 
 @implementation CVWrapper
 
-+ (UIImage*) processImageWithOpenCV: (UIImage*) inputImage
++ (UIImage*) processWithImage: (UIImage*) image
 {
-    NSArray* imageArray = [NSArray arrayWithObject:inputImage];
-    UIImage* result = [[self class] processWithArray:imageArray];
+    UIImage* result = [[self class] processWithImages:@[image]];
     return result;
 }
 
-+ (UIImage*) processWithOpenCVImage1:(UIImage*)inputImage1 image2:(UIImage*)inputImage2;
++ (UIImage*) processWithImage1:(UIImage*)image1 image2:(UIImage*)image2;
 {
-    NSArray* imageArray = [NSArray arrayWithObjects:inputImage1,inputImage2,nil];
-    UIImage* result = [[self class] processWithArray:imageArray];
+    UIImage* result = [[self class] processWithImages:@[image1, image2]];
     return result;
 }
 
-+ (UIImage*) processWithArray:(NSArray*)imageArray
++ (UIImage*) processWithImages:(NSArray<UIImage*>*)images;
 {
-    if ([imageArray count]==0){
+    if ([images count]==0){
         NSLog (@"imageArray is empty");
         return 0;
         }
     std::vector<cv::Mat> matImages;
 
-    for (id image in imageArray) {
+    for (id image in images) {
         if ([image isKindOfClass: [UIImage class]]) {
             /*
              All images taken with the iPhone/iPa cameras are LANDSCAPE LEFT orientation. The  UIImage imageOrientation flag is an instruction to the OS to transform the image during display only. When we feed images into openCV, they need to be the actual orientation that we expect them to be for stitching. So we rotate the actual pixel matrix here if required.
