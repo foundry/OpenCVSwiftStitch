@@ -2,8 +2,10 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 <img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/example.big.jpg">
 
-Version 5.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) - updated for Swift 5.0  + OpenCV 4.3  
-See appropriate branches and tags for Swift 2.x - 4.x
+Version 5.9 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) 
+
+This is a major update which implements Swift/C++ interoperabilty as announced at WWDC 2023. Swift interfaces directly with the C++ OpenCV API and all traces of Objective-C code have been removed.
+
 
 This project was created to a answer a couple of Stack Overflow questions:  
 [libraries to CAPTURE panorama in iOS](http://stackoverflow.com/q/14062932/1375695)  
@@ -26,7 +28,16 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
-__OpenCVSwiftStitch Versions__   
+__OpenCVSwiftStitch Versions__  
+Version 5.9
+[Cocoapods integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-Cocoapods)  
+[SwiftPackageManager integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
+Swift/C++ interop
+OpenCV 4.3
+Tested with XCode 15.0 / Swift 5.9 for iOS 15
+
+
+  
 [Version 5.1](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.1)  
 Swift / Objective-C / C++   
 OpenCV 4.3  
