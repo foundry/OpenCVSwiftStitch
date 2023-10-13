@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import opencv2
+
+
 
 
 extension UIImage {
@@ -96,7 +97,5 @@ extension UIImage {
 
         return mat
     }
-    
-    
     
 }

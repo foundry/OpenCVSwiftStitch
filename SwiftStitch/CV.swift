@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import opencv2
 import CxxStdlib
 
 enum ProcessError : Error {
@@ -31,7 +30,7 @@ struct CV {
 //                /*
 //                 All images taken with the iPhone/iPa cameras are LANDSCAPE LEFT orientation. The  UIImage imageOrientation flag is an instruction to the OS to transform the image during display only. When we feed images into openCV, they need to be the actual orientation that we expect them to be for stitching. So we rotate the actual pixel matrix here if required.
 //                 */
-            guard let rotatedImage = image.rotateToImageOrientation() 
+            guard let rotatedImage = image.rotate()
             else { throw ProcessError.RotationFailed }
             let matImage = rotatedImage.toCvMat3()!
             matImages.push_back(matImage)
@@ -39,7 +38,7 @@ struct CV {
 
         var outImage = cv.Mat()
         
-        let status : cv.Stitcher.Status = cvStitch(&matImages, &outImage );
+        let status = cvStitch(&matImages, &outImage );
         if status.rawValue != 0 {
             throw ProcessError.SitchingFailed
         }

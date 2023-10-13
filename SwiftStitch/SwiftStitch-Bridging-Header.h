@@ -4,12 +4,12 @@
 
 
 
-#import "CVWrapper.h"
-#import "UIImage+Rotate.h"
+
 
 #ifdef __cplusplus
 #undef NO
 #undef YES
+
 /*
  to use all opencv features, uncomment this line and comment the following two imports.
  */
