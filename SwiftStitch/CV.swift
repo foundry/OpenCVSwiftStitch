@@ -6,8 +6,7 @@
 //  Copyright © 2023 ellipsis.com. All rights reserved.
 //
 
-import Foundation
-import CxxStdlib
+import UIKit
 
 enum ProcessError : Error {
     case EmptyImagesArray
@@ -20,7 +19,6 @@ struct CV {
 
     
     public static func process (with images: [UIImage]) throws -> UIImage {
-        os_log("process")
         guard let _ = images.first
         else { throw ProcessError.EmptyImagesArray  }
 
