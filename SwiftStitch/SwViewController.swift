@@ -58,7 +58,7 @@ class SwViewController: UIViewController, UIScrollViewDelegate {
             throw error
         }
         let images:[UIImage] = [image1,image2,image3,image4]
-        let stitchedImage:UIImage = try CVWrapper.process(with: images)
+        let stitchedImage =  try CV.process(with: images)
         return stitchedImage
     }
     
