@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB066B862AD37D2C008628FB /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB066B852AD37D2C008628FB /* CV.swift */; };
 		AB4B0EBC2AD9A73900709FB5 /* UIImage_rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B0EBB2AD9A73900709FB5 /* UIImage_rotation.swift */; };
+		AB4B0EBF2AD9D06500709FB5 /* OpenCV in Frameworks */ = {isa = PBXBuildFile; productRef = AB4B0EBE2AD9D06500709FB5 /* OpenCV */; };
 		AB67DB252AD4D20D00927094 /* UIImage_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */; };
 		AB7D8E80193E92C30059EE63 /* Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */; };
 		AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A87193E8E830018B9EC /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4B0EBF2AD9D06500709FB5 /* OpenCV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +143,9 @@
 			dependencies = (
 			);
 			name = SwiftStitch;
+			packageProductDependencies = (
+				AB4B0EBE2AD9D06500709FB5 /* OpenCV */,
+			);
 			productName = SwiftStitch;
 			productReference = AB896A82193E8E830018B9EC /* SwiftStitch.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +178,9 @@
 				Base,
 			);
 			mainGroup = AB896A79193E8E830018B9EC;
+			packageReferences = (
+				AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */,
+			);
 			productRefGroup = AB896A83193E8E830018B9EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +421,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeatse/opencv-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB4B0EBE2AD9D06500709FB5 /* OpenCV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */;
+			productName = OpenCV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB896A7A193E8E830018B9EC /* Project object */;
 }
