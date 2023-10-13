@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		611F9A007E2C5BB4D33A4742 /* Pods_SwiftStitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6558368905DF381524A8C2D4 /* Pods_SwiftStitch.framework */; };
-		AB7D8E7A193E928E0059EE63 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */; };
-		AB7D8E7D193E92B80059EE63 /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */; };
-		AB7D8E80193E92C30059EE63 /* stitching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7E193E92C30059EE63 /* stitching.cpp */; };
+		AB066B862AD37D2C008628FB /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB066B852AD37D2C008628FB /* CV.swift */; };
+		AB066B882AD37E74008628FB /* opencv2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB066B872AD37E74008628FB /* opencv2.xcframework */; };
+		AB67DB252AD4D20D00927094 /* UIImage_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */; };
+		AB7D8E80193E92C30059EE63 /* Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */; };
 		AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A87193E8E830018B9EC /* AppDelegate.swift */; };
 		AB896A8A193E8E830018B9EC /* SwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A89193E8E830018B9EC /* SwViewController.swift */; };
 		AB896A8D193E8E830018B9EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB896A8B193E8E830018B9EC /* Main.storyboard */; };
@@ -19,16 +19,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63B033CF6C9AD15D2589B0B8 /* Pods-SwiftStitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftStitch.release.xcconfig"; path = "Target Support Files/Pods-SwiftStitch/Pods-SwiftStitch.release.xcconfig"; sourceTree = "<group>"; };
-		6558368905DF381524A8C2D4 /* Pods_SwiftStitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftStitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB066B852AD37D2C008628FB /* CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
+		AB066B872AD37E74008628FB /* opencv2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = opencv2.xcframework; sourceTree = "<group>"; };
+		AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_extensions.swift; sourceTree = "<group>"; };
 		AB6D1AEE193F9B6600F8B0F5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftStitch-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
 		AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
 		AB7D8E7B193E92B80059EE63 /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
 		AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
-		AB7D8E7E193E92C30059EE63 /* stitching.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stitching.cpp; sourceTree = "<group>"; };
-		AB7D8E7F193E92C30059EE63 /* stitching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stitching.h; sourceTree = "<group>"; };
+		AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wrapper.cpp; sourceTree = "<group>"; };
+		AB7D8E7F193E92C30059EE63 /* Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrapper.h; sourceTree = "<group>"; };
 		AB7D8E83193F33B40059EE63 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AB896A82193E8E830018B9EC /* SwiftStitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB896A86193E8E830018B9EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		AB896A8E193E8E830018B9EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
-		CDFD1232382C802D5A2A602E /* Pods-SwiftStitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftStitch.debug.xcconfig"; path = "Target Support Files/Pods-SwiftStitch/Pods-SwiftStitch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				611F9A007E2C5BB4D33A4742 /* Pods_SwiftStitch.framework in Frameworks */,
+				AB066B882AD37E74008628FB /* opencv2.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +56,25 @@
 		96EE46765FAA4198FDF79483 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CDFD1232382C802D5A2A602E /* Pods-SwiftStitch.debug.xcconfig */,
-				63B033CF6C9AD15D2589B0B8 /* Pods-SwiftStitch.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB4B0EBA2AD999B100709FB5 /* redundant */ = {
+			isa = PBXGroup;
+			children = (
+				AB7D8E7B193E92B80059EE63 /* CVWrapper.h */,
+				AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */,
+				AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */,
+				AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */,
+			);
+			name = redundant;
 			sourceTree = "<group>";
 		};
 		AB896A79193E8E830018B9EC = {
 			isa = PBXGroup;
 			children = (
+				AB066B872AD37E74008628FB /* opencv2.xcframework */,
 				AB6D1AEE193F9B6600F8B0F5 /* README.markdown */,
 				AB896A84193E8E830018B9EC /* SwiftStitch */,
 				AB896A83193E8E830018B9EC /* Products */,
@@ -84,18 +94,17 @@
 		AB896A84193E8E830018B9EC /* SwiftStitch */ = {
 			isa = PBXGroup;
 			children = (
+				AB4B0EBA2AD999B100709FB5 /* redundant */,
 				ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */,
 				ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */,
-				AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */,
-				AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */,
 				AB896A87193E8E830018B9EC /* AppDelegate.swift */,
 				AB896A89193E8E830018B9EC /* SwViewController.swift */,
 				AB896A8B193E8E830018B9EC /* Main.storyboard */,
+				AB066B852AD37D2C008628FB /* CV.swift */,
+				AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */,
 				AB896A8E193E8E830018B9EC /* Images.xcassets */,
-				AB7D8E7B193E92B80059EE63 /* CVWrapper.h */,
-				AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */,
-				AB7D8E7E193E92C30059EE63 /* stitching.cpp */,
-				AB7D8E7F193E92C30059EE63 /* stitching.h */,
+				AB7D8E7F193E92C30059EE63 /* Wrapper.h */,
+				AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */,
 				AB896A85193E8E830018B9EC /* Supporting Files */,
 				AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */,
 			);
@@ -114,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				AB7D8E83193F33B40059EE63 /* libz.dylib */,
-				6558368905DF381524A8C2D4 /* Pods_SwiftStitch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,7 +134,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB896A9E193E8E830018B9EC /* Build configuration list for PBXNativeTarget "SwiftStitch" */;
 			buildPhases = (
-				99571668961909572DE97DAF /* [CP] Check Pods Manifest.lock */,
 				AB896A7E193E8E830018B9EC /* Sources */,
 				AB896A7F193E8E830018B9EC /* Frameworks */,
 				AB896A80193E8E830018B9EC /* Resources */,
@@ -189,41 +196,16 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		99571668961909572DE97DAF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftStitch-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		AB896A7E193E8E830018B9EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AB896A8A193E8E830018B9EC /* SwViewController.swift in Sources */,
-				AB7D8E80193E92C30059EE63 /* stitching.cpp in Sources */,
+				AB7D8E80193E92C30059EE63 /* Wrapper.cpp in Sources */,
 				ABAA668D1BD420BE00BD6A45 /* UIImage+Rotate.m in Sources */,
-				AB7D8E7A193E928E0059EE63 /* UIImage+OpenCV.mm in Sources */,
-				AB7D8E7D193E92B80059EE63 /* CVWrapper.mm in Sources */,
+				AB67DB252AD4D20D00927094 /* UIImage_extensions.swift in Sources */,
+				AB066B862AD37D2C008628FB /* CV.swift in Sources */,
 				AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +334,6 @@
 		};
 		AB896A9F193E8E830018B9EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDFD1232382C802D5A2A602E /* Pods-SwiftStitch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
@@ -384,7 +365,6 @@
 		};
 		AB896AA0193E8E830018B9EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63B033CF6C9AD15D2589B0B8 /* Pods-SwiftStitch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
