@@ -24,10 +24,6 @@
 		AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_extensions.swift; sourceTree = "<group>"; };
 		AB6D1AEE193F9B6600F8B0F5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftStitch-Bridging-Header.h"; sourceTree = "<group>"; };
-		AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
-		AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
-		AB7D8E7B193E92B80059EE63 /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
-		AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
 		AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wrapper.cpp; sourceTree = "<group>"; };
 		AB7D8E7F193E92C30059EE63 /* Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrapper.h; sourceTree = "<group>"; };
 		AB7D8E83193F33B40059EE63 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -37,8 +33,6 @@
 		AB896A89193E8E830018B9EC /* SwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwViewController.swift; sourceTree = "<group>"; };
 		AB896A8C193E8E830018B9EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB896A8E193E8E830018B9EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
-		ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,26 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		96EE46765FAA4198FDF79483 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		AB4B0EBA2AD999B100709FB5 /* redundant */ = {
-			isa = PBXGroup;
-			children = (
-				ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */,
-				ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */,
-				AB7D8E7B193E92B80059EE63 /* CVWrapper.h */,
-				AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */,
-				AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */,
-				AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */,
-			);
-			name = redundant;
-			sourceTree = "<group>";
-		};
 		AB896A79193E8E830018B9EC = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +54,6 @@
 				AB896A84193E8E830018B9EC /* SwiftStitch */,
 				AB896A83193E8E830018B9EC /* Products */,
 				EE5F212F31B24F2C835C369D /* Frameworks */,
-				96EE46765FAA4198FDF79483 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +68,6 @@
 		AB896A84193E8E830018B9EC /* SwiftStitch */ = {
 			isa = PBXGroup;
 			children = (
-				AB4B0EBA2AD999B100709FB5 /* redundant */,
 				AB896A87193E8E830018B9EC /* AppDelegate.swift */,
 				AB896A89193E8E830018B9EC /* SwViewController.swift */,
 				AB896A8B193E8E830018B9EC /* Main.storyboard */,
