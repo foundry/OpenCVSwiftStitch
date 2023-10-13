@@ -361,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0;
+				MARKETING_VERSION = 5.9;
 				OTHER_CFLAGS = (
 					"-fvisibility=hidden",
 					"-fvisibility-inlines-hidden",
@@ -393,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0;
+				MARKETING_VERSION = 5.9;
 				OTHER_CFLAGS = (
 					"-fvisibility=hidden",
 					"-fvisibility-inlines-hidden",
