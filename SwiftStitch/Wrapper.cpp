@@ -1,28 +1,8 @@
-/////////////////////////
-/*
- 
- // stitching.cpp
- // adapted from stitching.cpp sample distributed with openCV source.
- // adapted by Foundry for iOS
- 
- */
-
-
-
 
 #include "Wrapper.h"
 
-
-
 using namespace std;
 using namespace cv;
-
-bool try_use_gpu = false;
-vector<Mat> imgs;
-string result_name = "result.jpg";
-
-void printUsage();
-int parseCmdArgs(int argc, char** argv);
 
 cv::Stitcher::Status cvStitch (std::vector<cv::Mat>& images, cv::Mat& outImage) {
     Ptr<Stitcher> stitcher = Stitcher::create();
