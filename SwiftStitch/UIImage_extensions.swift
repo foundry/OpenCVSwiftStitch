@@ -71,14 +71,14 @@ extension UIImage {
         guard var mat = self.toCvMat()
         else {return nil}
         /*
-        let colourspace = cv.ColorConversionCodes.COLOR_RGBA2RGB
+        using a wrapper function to get around these C++ interop issues
+         
+        `let colourspace = cv.ColorConversionCodes.COLOR_RGBA2RGB`
          
          yields error:
                 Type 'cv.ColorConversionCodes' has no member 'COLOR_RGBA2RGB'
-         
-         */
-        /*
-         cv.cvtColor(cvInputArray(&mat)  , cvOutputArray(&mat), colourspace,0)
+       
+         `cv.cvtColor(cvInputArray(&mat)  , cvOutputArray(&mat), colourspace,0)`
 
          yields error:
          
@@ -87,13 +87,13 @@ extension UIImage {
          
          but the signture is
 
-         CV_EXPORTS_W void cvtColor( InputArray src, OutputArray dst, int code, int dstCn = 0 );
+         `CV_EXPORTS_W void cvtColor( InputArray src, OutputArray dst, int code, int dstCn = 0 )`
          
          pass by reference (InputArray, OutputArray) not pass by value (_InputArray, _OutputArray):
 
          */
      
-        cvCvtColor(&mat)
+        cvCvtColor_RGBA2RGB(&mat)
 
         return mat
     }
