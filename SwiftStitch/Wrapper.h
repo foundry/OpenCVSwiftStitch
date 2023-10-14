@@ -24,7 +24,7 @@ using stdVectorOfCvMat = std::vector<cv::Mat>;
 
 cv::Stitcher::Status cvStitch (std::vector<cv::Mat>& images, cv::Mat& outImage);
 
-void cvCvtColor (cv::Mat& image);
+void cvCvtColor_RGBA2RGB(cv::Mat& image);
 
 cv::Mat  cvMatCV_8UC4(int rows, int cols);
 

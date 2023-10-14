@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		118C1B045C748ABA7F1F5DE5 /* Pods_SwiftStitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEE31D6AA72662961D31854 /* Pods_SwiftStitch.framework */; };
 		AB066B862AD37D2C008628FB /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB066B852AD37D2C008628FB /* CV.swift */; };
 		AB4B0EBC2AD9A73900709FB5 /* UIImage_rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B0EBB2AD9A73900709FB5 /* UIImage_rotation.swift */; };
+		AB4B0EBF2AD9D06500709FB5 /* OpenCV in Frameworks */ = {isa = PBXBuildFile; productRef = AB4B0EBE2AD9D06500709FB5 /* OpenCV */; };
 		AB67DB252AD4D20D00927094 /* UIImage_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */; };
 		AB7D8E80193E92C30059EE63 /* Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */; };
 		AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A87193E8E830018B9EC /* AppDelegate.swift */; };
@@ -19,9 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		444C900B9C343B944A9767C3 /* Pods-SwiftStitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftStitch.debug.xcconfig"; path = "Target Support Files/Pods-SwiftStitch/Pods-SwiftStitch.debug.xcconfig"; sourceTree = "<group>"; };
-		52917D38A1D9799CD463AF6A /* Pods-SwiftStitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftStitch.release.xcconfig"; path = "Target Support Files/Pods-SwiftStitch/Pods-SwiftStitch.release.xcconfig"; sourceTree = "<group>"; };
-		6BEE31D6AA72662961D31854 /* Pods_SwiftStitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftStitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB066B852AD37D2C008628FB /* CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
 		AB4B0EBB2AD9A73900709FB5 /* UIImage_rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_rotation.swift; sourceTree = "<group>"; };
 		AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_extensions.swift; sourceTree = "<group>"; };
@@ -43,22 +40,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				118C1B045C748ABA7F1F5DE5 /* Pods_SwiftStitch.framework in Frameworks */,
+				AB4B0EBF2AD9D06500709FB5 /* OpenCV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		96EE46765FAA4198FDF79483 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				444C900B9C343B944A9767C3 /* Pods-SwiftStitch.debug.xcconfig */,
-				52917D38A1D9799CD463AF6A /* Pods-SwiftStitch.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		AB896A79193E8E830018B9EC = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +54,6 @@
 				AB896A84193E8E830018B9EC /* SwiftStitch */,
 				AB896A83193E8E830018B9EC /* Products */,
 				EE5F212F31B24F2C835C369D /* Frameworks */,
-				96EE46765FAA4198FDF79483 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				AB7D8E83193F33B40059EE63 /* libz.dylib */,
-				6BEE31D6AA72662961D31854 /* Pods_SwiftStitch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,7 +106,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB896A9E193E8E830018B9EC /* Build configuration list for PBXNativeTarget "SwiftStitch" */;
 			buildPhases = (
-				B9B16620B22D47AF4E7CDA7B /* [CP] Check Pods Manifest.lock */,
 				AB896A7E193E8E830018B9EC /* Sources */,
 				AB896A7F193E8E830018B9EC /* Frameworks */,
 				AB896A80193E8E830018B9EC /* Resources */,
@@ -130,6 +115,9 @@
 			dependencies = (
 			);
 			name = SwiftStitch;
+			packageProductDependencies = (
+				AB4B0EBE2AD9D06500709FB5 /* OpenCV */,
+			);
 			productName = SwiftStitch;
 			productReference = AB896A82193E8E830018B9EC /* SwiftStitch.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +150,9 @@
 				Base,
 			);
 			mainGroup = AB896A79193E8E830018B9EC;
+			packageReferences = (
+				AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */,
+			);
 			productRefGroup = AB896A83193E8E830018B9EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -182,31 +173,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B9B16620B22D47AF4E7CDA7B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftStitch-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB896A7E193E8E830018B9EC /* Sources */ = {
@@ -346,7 +312,6 @@
 		};
 		AB896A9F193E8E830018B9EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 444C900B9C343B944A9767C3 /* Pods-SwiftStitch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
@@ -378,7 +343,6 @@
 		};
 		AB896AA0193E8E830018B9EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52917D38A1D9799CD463AF6A /* Pods-SwiftStitch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
@@ -429,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeatse/opencv-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB4B0EBE2AD9D06500709FB5 /* OpenCV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */;
+			productName = OpenCV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB896A7A193E8E830018B9EC /* Project object */;
 }

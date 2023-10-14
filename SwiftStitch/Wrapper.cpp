@@ -11,9 +11,6 @@
 
 
 #include "Wrapper.h"
-#include <iostream>
-#include <fstream>
-
 
 
 
@@ -34,7 +31,7 @@ cv::Stitcher::Status cvStitch (std::vector<cv::Mat>& images, cv::Mat& outImage) 
 }
 
 
-void cvCvtColor (cv::Mat& image) {
+void cvCvtColor_RGBA2RGB(cv::Mat& image) {
     cv::cvtColor(image , image , COLOR_RGBA2RGB);
 }
 
