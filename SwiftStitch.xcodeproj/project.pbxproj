@@ -47,15 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		96EE46765FAA4198FDF79483 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				444C900B9C343B944A9767C3 /* Pods-SwiftStitch.debug.xcconfig */,
-				52917D38A1D9799CD463AF6A /* Pods-SwiftStitch.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		AB896A79193E8E830018B9EC = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +151,7 @@
 			);
 			mainGroup = AB896A79193E8E830018B9EC;
 			packageReferences = (
-				AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */,
+				AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */,
 			);
 			productRefGroup = AB896A83193E8E830018B9EC /* Products */;
 			projectDirPath = "";
@@ -404,7 +395,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */ = {
+		AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yeatse/opencv-spm.git";
 			requirement = {
@@ -417,7 +408,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		AB4B0EBE2AD9D06500709FB5 /* OpenCV */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */;
+			package = AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */;
 			productName = OpenCV;
 		};
 /* End XCSwiftPackageProductDependency section */
