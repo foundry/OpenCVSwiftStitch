@@ -13,10 +13,7 @@
 
 /*
  
- C++ wrapper functions to work around Swift-C++ type issues
- 
- - visibility of OpenCV enums and #defines
- - use of OpenCV proxy classes InputArray and OutputArray
+ C++ wrapper to work around Swift-C++ type issues
 
  */
 
@@ -24,15 +21,5 @@ using stdVectorOfCvMat = std::vector<cv::Mat>;
 
 cv::Stitcher::Status cvStitch (std::vector<cv::Mat>& images, cv::Mat& outImage);
 
-void cvCvtColor_RGBA2RGB(cv::Mat& image);
 
-cv::Mat  cvMatCV_8UC4(int rows, int cols);
-
-/*
-cv::_InputArray cv_inputArray(cv::Mat);
-cv::InputArray cvInputArray(cv::Mat&);
-cv::_OutputArray cv_outputArray(cv::Mat);
-cv::OutputArray cvOutputArray(cv::Mat&);
-cv::InputArrayOfArrays cvInputArrayOfArrays(std::vector <cv::Mat>);
- */
 #endif
