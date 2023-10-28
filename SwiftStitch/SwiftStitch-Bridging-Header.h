@@ -4,5 +4,6 @@
 
 #ifdef __cplusplus
 #import "Wrapper.h"
+#import <opencv2/imgcodecs/ios.h>
 #endif
 

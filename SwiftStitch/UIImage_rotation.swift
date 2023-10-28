@@ -12,7 +12,7 @@ import UIKit
 
 extension UIImage {
     func rotate() -> UIImage? {
-        //https://gist.github.com/therealjohn/c658d6c087847360afdc
+        //https://gist.github.com/alex-cellcity/1531596
     
         // No-op if the orientation is already correct
         if (self.imageOrientation == .up) {
