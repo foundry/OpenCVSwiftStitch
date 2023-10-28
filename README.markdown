@@ -4,37 +4,52 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 Version 5.9 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) 
 
-This is a major update which implements Swift/C++ interoperabilty as announced at WWDC 2023. Swift interfaces directly with the C++ OpenCV API and all traces of Objective-C code have been removed.
-
+This is a major update which implements **Swift/C++ interoperabilty** as announced at WWDC 2023. Swift now interfaces directly with the C++ OpenCV API. All traces of Objective-C code have been removed.
 
 This project was created to a answer a couple of Stack Overflow questions:  
-[libraries to CAPTURE panorama in iOS](http://stackoverflow.com/q/14062932/1375695)  
-[Can I mix Swift with C++? Like the Objective - C .mm files](http://stackoverflow.com/q/24042774/1375695)    
+- [libraries to CAPTURE panorama in iOS](http://stackoverflow.com/q/14062932/1375695)  
+- [Can I mix Swift with C++? Like the Objective - C .mm files](http://stackoverflow.com/q/24042774/1375695)    
 
-v2 demonstrates how to mix Swift, Objective-C and C++ in one project whilst keeping the code clearly separate. 
+It demonstrates how to mix Swift and C++ in one project whilst keeping the code clearly separate. 
 
-The project AppDelegate and View Controller are written in Swift. Swift cannot talk directly to C++ (which we need for OpenCV), so we provide an Objective-C++ wrapper class to mediate between Swift and C++. We also provide an Objective-C++ category on UIImage to mediate between UIImage and CV::Mat image formats. The CVWrapper header file is pure Objective-C. For [v1](https://github.com/foundry/OpenCVStitch)(which doesn't use Swift) this separation was a matter of clean style. For v2, it is a requirement: if any C++ headers are included in the wrapper, the app will not compile (Swift won't like it).
+__Wrapper__ 
+
+For Swift versions < 5.9 an Objective-C wrapper was required to interface between Swift and C++. Swift 5.9 allows us to dispense with Objective-C altogether. Swift can call the C++ APIs in the OpenCV framework directly.
+
+A small C++ wrapper is still used as a workaround for OpenCV API types that can't be accessed directly or are not yet available from Swift. 
+
+__Bridging Header__  
+To access the C++ wrapper from Swift in the same module it is imported via a bridging header. 
+
 
 __Installation__  
+
+[Cocoapods version](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-Cocoapods)  
 To run the project you need to install the OpenCV framework using Cocoapods    
 
 Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
 
-The podfile will install openCV v4.3.0. 
+The podfile will install OpenCV v4.3.0. 
 
+[Swift Package Manager version](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
+This version imports OpenCV as a Package Dependency from [https://github.com/yeatse/opencv-spm](https://github.com/yeatse/opencv-spm)
+
+The Package will install OpenCV v4.8.1 (or later)
 
 __Use__  
+
 OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitcher class. The c++ code is adapted from a sample included with the openCV distribution.  
 
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
 __OpenCVSwiftStitch Versions__  
 Version 5.9
-[Cocoapods integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-Cocoapods)  
-[SwiftPackageManager integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
-Swift/C++ interop
-OpenCV 4.3
-Tested with XCode 15.0 / Swift 5.9 for iOS 15
+- [Cocoapods integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-Cocoapods)  
+- [SwiftPackageManager integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
+
+Swift/C++ interop  
+OpenCV 4.3 (pod) 4.8.1 (SPM)  
+Tested with XCode 15.0 / Swift 5.9 for iOS 15  
 
 
   
@@ -67,14 +82,17 @@ Tested with XCode 4.5.2 -> 6.3 for iOS 5.1 upwards
 Provides a partial answer to: [Libraries to capture panoramas in iOS 6](http://stackoverflow.com/questions/14062932/libraries-to-capture-panorama-in-ios-6/14064788#14064788) (Stack Overflow)
 
 __OpenCV Versions__   
+_OpenCV 4.8.1_  
+The Swift package will bring in the most recent stable version of OpenCV
+
 _OpenCV 4.3_  
 The podfile installs OpenCV 4.3  
 
 _this version of OpenCVStitch opted to use cocoapods to overcome the [notorious](http://stackoverflow.com/q/13905471/1375695) [installation](http://stackoverflow.com/q/15855894/1375695) [issues](http://stackoverflow.com/a/14186883/1375695) with previous versions of the framework_
 
-__XCode 12__  
+__XCode 15__  
 
-Project is now updated for Swift 5.0 and XCode 12. For backwards compatibility checkout the 2.0 / 2.1 branches, 3.0 /4.0 releases or refer to the Objective-C version v1.0.
+Project is now updated for Swift 5.9 and XCode 15. For backwards compatibility checkout the 2.0 / 2.1 branches, 3.0/4.0/5.0 releases or refer to the Objective-C version v1.0.
 
 __Comparisons__
 
