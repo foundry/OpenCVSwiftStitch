@@ -10,7 +10,6 @@
 		AB066B862AD37D2C008628FB /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB066B852AD37D2C008628FB /* CV.swift */; };
 		AB4B0EBC2AD9A73900709FB5 /* UIImage_rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B0EBB2AD9A73900709FB5 /* UIImage_rotation.swift */; };
 		AB4B0EBF2AD9D06500709FB5 /* OpenCV in Frameworks */ = {isa = PBXBuildFile; productRef = AB4B0EBE2AD9D06500709FB5 /* OpenCV */; };
-		AB67DB252AD4D20D00927094 /* UIImage_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */; };
 		AB7D8E80193E92C30059EE63 /* Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */; };
 		AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A87193E8E830018B9EC /* AppDelegate.swift */; };
 		AB896A8A193E8E830018B9EC /* SwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A89193E8E830018B9EC /* SwViewController.swift */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		AB066B852AD37D2C008628FB /* CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
 		AB4B0EBB2AD9A73900709FB5 /* UIImage_rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_rotation.swift; sourceTree = "<group>"; };
-		AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_extensions.swift; sourceTree = "<group>"; };
 		AB6D1AEE193F9B6600F8B0F5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftStitch-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wrapper.cpp; sourceTree = "<group>"; };
@@ -72,13 +70,12 @@
 				AB896A89193E8E830018B9EC /* SwViewController.swift */,
 				AB896A8B193E8E830018B9EC /* Main.storyboard */,
 				AB066B852AD37D2C008628FB /* CV.swift */,
-				AB67DB242AD4D20D00927094 /* UIImage_extensions.swift */,
 				AB4B0EBB2AD9A73900709FB5 /* UIImage_rotation.swift */,
 				AB896A8E193E8E830018B9EC /* Images.xcassets */,
 				AB7D8E7F193E92C30059EE63 /* Wrapper.h */,
 				AB7D8E7E193E92C30059EE63 /* Wrapper.cpp */,
-				AB896A85193E8E830018B9EC /* Supporting Files */,
 				AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */,
+				AB896A85193E8E830018B9EC /* Supporting Files */,
 			);
 			path = SwiftStitch;
 			sourceTree = "<group>";
@@ -151,7 +148,7 @@
 			);
 			mainGroup = AB896A79193E8E830018B9EC;
 			packageReferences = (
-				AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */,
+				AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */,
 			);
 			productRefGroup = AB896A83193E8E830018B9EC /* Products */;
 			projectDirPath = "";
@@ -181,7 +178,6 @@
 			files = (
 				AB896A8A193E8E830018B9EC /* SwViewController.swift in Sources */,
 				AB7D8E80193E92C30059EE63 /* Wrapper.cpp in Sources */,
-				AB67DB252AD4D20D00927094 /* UIImage_extensions.swift in Sources */,
 				AB066B862AD37D2C008628FB /* CV.swift in Sources */,
 				AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */,
 				AB4B0EBC2AD9A73900709FB5 /* UIImage_rotation.swift in Sources */,
@@ -395,7 +391,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */ = {
+		AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yeatse/opencv-spm.git";
 			requirement = {
@@ -408,7 +404,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		AB4B0EBE2AD9D06500709FB5 /* OpenCV */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm.git" */;
+			package = AB4B0EBD2AD9D06500709FB5 /* XCRemoteSwiftPackageReference "opencv-spm" */;
 			productName = OpenCV;
 		};
 /* End XCSwiftPackageProductDependency section */

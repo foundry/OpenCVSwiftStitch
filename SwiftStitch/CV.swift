@@ -30,8 +30,9 @@ struct CV {
 //                 */
             guard let rotatedImage = image.rotate()
             else { throw ProcessError.RotationFailed }
-            let matImage = rotatedImage.toCvMat3()!
-            matImages.push_back(matImage)
+            var mat = cv.Mat()
+            UIImageToMat(rotatedImage, &mat, false)
+            matImages.push_back(mat)
         }
 
         var outImage = cv.Mat()
@@ -40,7 +41,7 @@ struct CV {
         if status.rawValue != 0 {
             throw ProcessError.SitchingFailed
         }
-        guard let image =  UIImage.imageFromCvMat(outImage)
+        guard let image = MatToUIImage(outImage)
         else { throw ProcessError.MatConversionToImageFailed }
         return image
     }
