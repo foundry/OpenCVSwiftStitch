@@ -4,7 +4,7 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 Version 5.9 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) 
 
-This is a major update which implements **Swift/C++ interoperabilty** as announced at WWDC 2023. Swift now interfaces directly with the C++ OpenCV API. All traces of Objective-C code have been removed.
+This update implements **Swift/C++ interoperabilty** as announced at WWDC 2023. Swift now interfaces directly with the C++ OpenCV API. All traces of Objective-C code have been removed.
 
 This project was created to a answer a couple of Stack Overflow questions:  
 - [libraries to CAPTURE panorama in iOS](http://stackoverflow.com/q/14062932/1375695)  
@@ -24,17 +24,14 @@ To access the C++ wrapper from Swift in the same module it is imported via a bri
 
 __Installation__  
 
-[Cocoapods version](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-Cocoapods)  
-To run the project you need to install the OpenCV framework using Cocoapods    
 
-Assuming you have first [installed CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run 'pod install' in this directory to install OpenCV for the project. From then on, always open the project in XCode from the `SwiftStitch.xcworkspace` file that the pod install creates. 
 
-The podfile will install OpenCV v4.3.0. 
-
-[Swift Package Manager version](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
+[Swift Package Manager](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
 This version imports OpenCV as a Package Dependency from [https://github.com/yeatse/opencv-spm](https://github.com/yeatse/opencv-spm)
 
 The Package will install OpenCV v4.8.1 (or later)
+
+Alternatively, you can manually install the OpenCV framework from [OpenCV.org](https://www.opencv.org)
 
 __Use__  
 
@@ -43,16 +40,11 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
 __OpenCVSwiftStitch Versions__  
-Version 5.9
-- [Cocoapods integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-Cocoapods)  
-- [SwiftPackageManager integration](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
-
+[Version 5.9](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)
 Swift/C++ interop  
-OpenCV 4.3 (pod) 4.8.1 (SPM)  
+OpenCV 4.8.1  
+Swift package manager integration  
 Tested with XCode 15.0 / Swift 5.9 for iOS 15  
-
-
-  
 [Version 5.1](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.1)  
 Swift / Objective-C / C++   
 OpenCV 4.3  
