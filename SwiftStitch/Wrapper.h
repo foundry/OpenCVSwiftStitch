@@ -19,7 +19,13 @@
 
 using stdVectorOfCvMat = std::vector<cv::Mat>;
 
-cv::Stitcher::Status cvStitch (std::vector<cv::Mat>& images, cv::Mat& outImage);
+/*
+ Runs the OpenCV stitching pipeline. OpenCV can raise a cv::Exception from
+ inside stitch() (e.g. an internal assertion), and C++ exceptions cannot cross
+ into Swift — they abort the process as an "unhandled C++/Objective-C exception".
+ So we catch here and hand the message back via errorMessage (empty on success).
+ */
+cv::Stitcher::Status cvStitch (std::vector<cv::Mat>& images, cv::Mat& outImage, std::string& errorMessage);
 
 
 #endif
