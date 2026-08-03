@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yeatse/opencv-spm.git",
       "state" : {
-        "revision" : "02f0e4e65b1f23e547dc7ec5454583e86333e397",
-        "version" : "4.8.1"
+        "revision" : "151a5374946aa867ff3892e0d69fd85e1ecdaf2e",
+        "version" : "4.13.0"
       }
     }
   ],
