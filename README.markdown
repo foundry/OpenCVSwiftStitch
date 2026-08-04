@@ -16,9 +16,13 @@ __Wrapper__
 
 For Swift versions < 5.9 an Objective-C wrapper was required to interface between Swift and C++. Swift 5.9 allows us to dispense with Objective-C altogether. Swift can call the C++ APIs in the OpenCV framework directly.
 
-A small C++ wrapper is still used as a workaround for OpenCV API types that can't be accessed directly or are not yet available from Swift. 
+A small C++ wrapper is still used as a workaround for OpenCV API types that can't be accessed directly or are not yet available from Swift.
 
-__Bridging Header__  
+_Historical note — the `InputArray`/`OutputArray` gotcha_
+
+OpenCV's `InputArray`/`OutputArray` are reference typedefs (`const _InputArray&`), not value types, and early Swift/C++ interop couldn't pass them. An early wrapper bridged with `cv::InputArray cvInputArray(cv::Mat& m) { return m; }` — which compiled and ran, but returns a reference to a temporary (undefined behaviour); it only "worked" because `_InputArray` is a non-owning proxy over the still-alive `Mat`. The lesson: keep these proxy types inside C++ and expose only plain `cv::Mat&` to Swift. (These helpers are now gone, replaced by OpenCV's own `UIImageToMat` / `MatToUIImage`.)
+
+__Bridging Header__
 To access the C++ wrapper from Swift in the same module it is imported via a bridging header. 
 
 
