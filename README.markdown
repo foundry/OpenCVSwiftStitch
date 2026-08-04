@@ -33,7 +33,7 @@ __Installation__
 [Swift Package Manager](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
 This version imports OpenCV as a Package Dependency from [https://github.com/yeatse/opencv-spm](https://github.com/yeatse/opencv-spm)
 
-The Package will install OpenCV v4.8.1 (or later)
+The Package will install OpenCV v4.13.0 (or later)
 
 Alternatively, you can manually install the OpenCV framework from [OpenCV.org](https://www.opencv.org)
 
