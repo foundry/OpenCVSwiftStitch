@@ -2,7 +2,7 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 <img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/example.big.jpg">
 
-Version 5.9 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) 
+Version 6.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) 
 
 This update implements **Swift/C++ interoperabilty** as announced at WWDC 2023. Swift now interfaces directly with the C++ OpenCV API. All traces of Objective-C code have been removed.
 
@@ -18,9 +18,11 @@ For Swift versions < 5.9 an Objective-C wrapper was required to interface betwee
 
 A small C++ wrapper is still used as a workaround for OpenCV API types that can't be accessed directly or are not yet available from Swift.
 
-_Historical note — the `InputArray`/`OutputArray` gotcha_
+_Note — the `InputArray`/`OutputArray` gotcha_
 
-OpenCV's `InputArray`/`OutputArray` are reference typedefs (`const _InputArray&`), not value types, and early Swift/C++ interop couldn't pass them. An early wrapper bridged with `cv::InputArray cvInputArray(cv::Mat& m) { return m; }` — which compiled and ran, but returns a reference to a temporary (undefined behaviour); it only "worked" because `_InputArray` is a non-owning proxy over the still-alive `Mat`. The lesson: keep these proxy types inside C++ and expose only plain `cv::Mat&` to Swift. (These helpers are now gone, replaced by OpenCV's own `UIImageToMat` / `MatToUIImage`.)
+OpenCV's `InputArray`/`OutputArray` are reference typedefs (`const _InputArray&`) over a non-owning proxy, not value types. Early Swift/C++ interop (5.9) couldn't pass them at all, and an early wrapper bridged with `cv::InputArray cvInputArray(cv::Mat& m) { return m; }` — which compiled and ran, but returns a reference to a temporary (undefined behaviour); it only "worked" because `_InputArray` stays valid while its backing `Mat` is alive. The wrapper keeps these proxy types inside C++ and exposes only plain `cv::Mat&` to Swift. (The helpers are now gone, replaced by OpenCV's own `UIImageToMat` / `MatToUIImage`.)
+
+This lifetime dependency is now expressible rather than only conventional: Swift 6.2's safe C++ interop can import `_InputArray` as `SWIFT_NONESCAPABLE` and mark the `Mat`→proxy bridge `__lifetimebound` (from `<swift/bridging>`), so the compiler *enforces* that the proxy can't outlive its `Mat`. Hiding the proxies is still the simplest choice here; the annotations are the sanctioned route if you ever expose them directly.
 
 __Bridging Header__
 To access the C++ wrapper from Swift in the same module it is imported via a bridging header. 
@@ -33,7 +35,7 @@ __Installation__
 [Swift Package Manager](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
 This version imports OpenCV as a Package Dependency from [https://github.com/yeatse/opencv-spm](https://github.com/yeatse/opencv-spm)
 
-The Package will install OpenCV v4.8.1 (or later)
+The Package will install OpenCV v4.8.13 (or later)
 
 Alternatively, you can manually install the OpenCV framework from [OpenCV.org](https://www.opencv.org)
 
@@ -44,11 +46,11 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
 __OpenCVSwiftStitch Versions__  
-[Version 5.9](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)
+[Version 6.0](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/6.0)
 Swift/C++ interop  
-OpenCV 4.8.1  
+OpenCV >=4.8.13
 Swift package manager integration  
-Tested with XCode 15.0 / Swift 5.9 for iOS 15  
+Tested with XCode 15.0-26.6 / Swift 5.9-6.2 for iOS 15-26  
 [Version 5.1](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.1)  
 Swift / Objective-C / C++   
 OpenCV 4.3  
