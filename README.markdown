@@ -2,7 +2,7 @@ __OpenCV computer vision with iOS: stitching panoramas__
 
 <img src = "https://github.com/foundry/OpenCVSwiftStitch/blob/meta/meta/example.big.jpg">
 
-Version 5.9 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) 
+Version 6.0 of [OpenCVStitch](http://github.com/foundry/OpenCVStitch) 
 
 This update implements **Swift/C++ interoperabilty** as announced at WWDC 2023. Swift now interfaces directly with the C++ OpenCV API. All traces of Objective-C code have been removed.
 
@@ -35,7 +35,7 @@ __Installation__
 [Swift Package Manager](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)  
 This version imports OpenCV as a Package Dependency from [https://github.com/yeatse/opencv-spm](https://github.com/yeatse/opencv-spm)
 
-The Package will install OpenCV v4.8.1 (or later)
+The Package will install OpenCV v4.8.13 (or later)
 
 Alternatively, you can manually install the OpenCV framework from [OpenCV.org](https://www.opencv.org)
 
@@ -46,11 +46,11 @@ OpenCVStitch is a very simple iOS/openCV example showing basic use of the Stitch
 The app has almost no user interface. On launch, the stitching code operates on four sample images, displaying the result in a UIScrollView.
 
 __OpenCVSwiftStitch Versions__  
-[Version 5.9](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.9-SPM)
+[Version 6.0](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/6.0)
 Swift/C++ interop  
-OpenCV 4.8.1  
+OpenCV >=4.8.13
 Swift package manager integration  
-Tested with XCode 15.0 / Swift 5.9 for iOS 15  
+Tested with XCode 15.0-26.6 / Swift 5.9-6.2 for iOS 15-26  
 [Version 5.1](https://github.com/foundry/OpenCVSwiftStitch/releases/tag/5.1)  
 Swift / Objective-C / C++   
 OpenCV 4.3  
