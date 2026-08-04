@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import CxxStdlib
 
 enum ProcessError : Error {
     case EmptyImagesArray
     case SitchingFailed
     case RotationFailed
     case MatConversionToImageFailed
+    case StitchingException(String)
+}
+
+extension ProcessError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .EmptyImagesArray: return "No images were supplied for stitching."
+        case .SitchingFailed: return "Stitching failed (the images may not overlap enough)."
+        case .RotationFailed: return "Failed to rotate an input image."
+        case .MatConversionToImageFailed: return "Failed to convert the stitched result to an image."
+        case .StitchingException(let message): return "OpenCV error: \(message)"
+        }
+    }
 }
 
 struct CV {
@@ -36,8 +50,12 @@ struct CV {
         }
 
         var outImage = cv.Mat()
-        
-        let status = cvStitch(&matImages, &outImage );
+
+        var errorMessage = std.string()
+        let status = cvStitch(&matImages, &outImage, &errorMessage)
+        if !errorMessage.empty() {
+            throw ProcessError.StitchingException(String(errorMessage))
+        }
         if status.rawValue != 0 {
             throw ProcessError.SitchingFailed
         }
