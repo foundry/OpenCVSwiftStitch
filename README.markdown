@@ -18,11 +18,11 @@ For Swift versions < 5.9 an Objective-C wrapper was required to interface betwee
 
 A small C++ wrapper is still used as a workaround for OpenCV API types that can't be accessed directly or are not yet available from Swift.
 
-_Note — the `InputArray`/`OutputArray` gotcha_
+>_Note — the `InputArray`/`OutputArray` gotcha_
 
-OpenCV's `InputArray`/`OutputArray` are reference typedefs (`const _InputArray&`) over a non-owning proxy, not value types. Early Swift/C++ interop (5.9) couldn't pass them at all, and an early wrapper bridged with `cv::InputArray cvInputArray(cv::Mat& m) { return m; }` — which compiled and ran, but returns a reference to a temporary (undefined behaviour); it only "worked" because `_InputArray` stays valid while its backing `Mat` is alive. The wrapper keeps these proxy types inside C++ and exposes only plain `cv::Mat&` to Swift. (The helpers are now gone, replaced by OpenCV's own `UIImageToMat` / `MatToUIImage`.)
+>OpenCV's `InputArray`/`OutputArray` are reference typedefs (`const _InputArray&`) over a non-owning proxy, not value types. Early Swift/C++ interop (5.9) couldn't pass them at all, and an early wrapper bridged with `cv::InputArray cvInputArray(cv::Mat& m) { return m; }` — which compiled and ran, but returns a reference to a temporary (undefined behaviour); it only "worked" because `_InputArray` stays valid while its backing `Mat` is alive. The wrapper keeps these proxy types inside C++ and exposes only plain `cv::Mat&` to Swift. (The helpers are now gone, replaced by OpenCV's own `UIImageToMat` / `MatToUIImage`.)
 
-This lifetime dependency is now expressible rather than only conventional: Swift 6.2's safe C++ interop can import `_InputArray` as `SWIFT_NONESCAPABLE` and mark the `Mat`→proxy bridge `__lifetimebound` (from `<swift/bridging>`), so the compiler *enforces* that the proxy can't outlive its `Mat`. Hiding the proxies is still the simplest choice here; the annotations are the sanctioned route if you ever expose them directly.
+>This lifetime dependency is now expressible rather than only conventional: Swift 6.2's safe C++ interop can import `_InputArray` as `SWIFT_NONESCAPABLE` and mark the `Mat`→proxy bridge `__lifetimebound` (from `<swift/bridging>`), so the compiler *enforces* that the proxy can't outlive its `Mat`. Hiding the proxies is still the simplest choice here; the annotations are the sanctioned route if  they are ever exposed  directly.
 
 __Bridging Header__
 To access the C++ wrapper from Swift in the same module it is imported via a bridging header. 
